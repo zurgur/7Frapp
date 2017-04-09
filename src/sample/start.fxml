@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <Pane prefHeight="361.0" prefWidth="492.0">
+         <children>
+            <JFXButton fx:id="mySearch" layoutX="190.0" layoutY="122.0" onAction="#searchAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #11e41c;" text="Search" />
+            <JFXButton fx:id="myLogin" layoutX="190.0" layoutY="228.0" onAction="#LoginAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #11e41c;" text="Log In" />
+            <Text layoutX="190.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to 7Frapp✈" textAlignment="CENTER" wrappingWidth="112.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+   </children>
+</GridPane>

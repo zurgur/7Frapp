@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Search" id="hug">
+   <children>
+      <DatePicker layoutX="213.0" layoutY="200.0" promptText="7.4.2017" />
+      <JFXTextField fx:id="myDepartur" id="myDepartur" layoutX="213.0" layoutY="67.0" prefHeight="25.0" prefWidth="174.0" promptText="Departure" />
+      <JFXTextField fx:id="myArival" layoutX="213.0" layoutY="139.0" prefHeight="25.0" prefWidth="174.0" promptText="Arival" />
+      <JFXButton fx:id="mySearchbtn" layoutX="241.0" layoutY="262.0" onAction="#mySearchbtnA" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #11e41c;" text="Search" />
+   </children>
+</AnchorPane>
