@@ -1,26 +1,33 @@
 package sample;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+
 
 /**
  * Created by Alexander on 7.4.2017.
  */
 public class Search {
-    public Search (){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("search.fxml"));
-        loader.setController(this);
-        try{
-            loader.load();
-        }catch(Exception e){
-            System.out.println(e.getMessage()+ "FXMLCreatePersonController failed");
-        }
-    }
-    public void mySearchbtnA(ActionEvent actionEvent) {
-        // String s = myDepartur.getText();
-    }
+    //búa til FXML hluti svo við getum notað þá ur skjalinu
+    @FXML
+    Button leita;
+    @FXML
+    TextField departur;
+    @FXML
+    TextField arival;
+    @FXML
+    DatePicker date;
 
 
+    public void leitaAction(ActionEvent actionEvent){
+
+        String stuff = leita.getText();
+        System.out.println(stuff);
+        /*//String s = date.toString();
+        String s = this.departur.getText();
+        //String t = this.arival.getText();
+        System.out.println(s);*/
+    }
 }
