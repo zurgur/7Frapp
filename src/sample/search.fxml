@@ -7,9 +7,9 @@
 
 <AnchorPane id="hug" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Search">
    <children>
-      <DatePicker layoutX="213.0" layoutY="200.0" promptText="7.4.2017" />
-      <JFXTextField id="myDepartur" fx:id="myDepartur" layoutX="213.0" layoutY="67.0" prefHeight="25.0" prefWidth="174.0" promptText="Departure" />
-      <JFXTextField fx:id="myArival" layoutX="213.0" layoutY="139.0" prefHeight="25.0" prefWidth="174.0" promptText="Arival" />
+      <DatePicker fx:id="date" layoutX="213.0" layoutY="200.0" promptText="7.4.2017" />
+      <JFXTextField id="myDepartur" fx:id="departur" layoutX="213.0" layoutY="67.0" prefHeight="25.0" prefWidth="174.0" promptText="Departure" />
+      <JFXTextField fx:id="arival" layoutX="213.0" layoutY="139.0" prefHeight="25.0" prefWidth="174.0" promptText="Arival" />
       <JFXButton fx:id="leita" layoutX="241.0" layoutY="262.0" onAction="#leitaAction" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #11e41c;" text="Search" />
    </children>
 </AnchorPane>

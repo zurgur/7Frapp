@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Created by Alexander on 16.3.2017.
  */
 //fuking magic
-public class Connect {
+public class tengingVidGagnagrunn {
     public static java.sql.Connection connection(){
         try{
             //finn gagnagrunninn
