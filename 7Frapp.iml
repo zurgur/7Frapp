@@ -10,7 +10,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
+          <root url="jar://$USER_HOME$/OneDrive/2.ár/Vor 2017/Þróun hugbúnaðar/7frapp/jfoenix.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -19,7 +19,7 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$USER_HOME$/Desktop/sqlite-jdbc-3.16.1.jar!/" />
+          <root url="jar://$USER_HOME$/OneDrive/2.ár/Vor 2017/Þróun hugbúnaðar/7frapp/sqlite-jdbc-3.16.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
