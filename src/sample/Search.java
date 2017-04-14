@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
 import java.util.ArrayList;
@@ -21,10 +22,18 @@ public class Search {
     TextField arival;
     @FXML
     DatePicker date;
+    @FXML
+    RadioButton morgun;
+    @FXML
+    RadioButton hadeigi;
+    @FXML
+    RadioButton kvöld;
 
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
     ArrayList<String> fra = t.getFrom();
     ArrayList<String> til = t.getTo();
+    ArrayList<String> data = t.getDate();
+    ArrayList<String> time = t.getTime();
 
     public void leitaAction(ActionEvent actionEvent){
         String departurText = departur.getText();
@@ -32,6 +41,14 @@ public class Search {
         String dateText = (date.getValue()).toString();
         ArrayList<String> tilEr = searchForFlight(departurText,arivalText,dateText);
         System.out.println(tilEr);
+        if (morgun.isSelected()){
+            System.out.println("morgun");
+        }else if(hadeigi.isSelected()){
+            System.out.println("hádeigis");
+        }else if(kvöld.isSelected()){
+            System.out.println("kvöld");
+        }
+
 
     }
     public ArrayList<String> searchForFlight(String departure, String arrival,String date){
@@ -39,13 +56,30 @@ public class Search {
         // fer í gegn um arry-ana
         ArrayList<String> fraTil = new ArrayList<>();
         for(int i = 0; i<fra.size();i++){
-            String s = fra.get(i);
-            String t = til.get(i);
-            if(s.equalsIgnoreCase(departure)&& t.equalsIgnoreCase(arrival)){
-                fraTil.add(departure +" "+ arrival);
+            char fyrsti = (time.get(i)).charAt(0);
+            char seini = (time.get(i).charAt(1));
+            String strVal = String.valueOf(fyrsti + seini);
+            int tim = Integer.parseInt(strVal);
+            System.out.println(tim);
+            if (tim>=0 && tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
+                    (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
+                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+
+            }else if(tim>=10 && tim<=17 && hadeigi.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
+                    (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
+                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+
+            }else if(tim>=17 && tim<=23 && kvöld.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
+                    (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
+                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+
+            }else if ((fra.get(i)).equalsIgnoreCase(departure)&& (til.get(i)).equalsIgnoreCase(arrival)
+                    && (data.get(i)).equals(date)){
+                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
             }
 
         }
         return fraTil;
     }
+
 }
