@@ -11,7 +11,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
-import javafx.fxml.Initializable;
 
 import java.awt.*;
 import java.io.IOException;
@@ -61,6 +60,16 @@ public class Login{
         Parent root;
         Stage stage;
         stage = (Stage) tilBaka.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void StartAction(ActionEvent actionEvent) throws IOException {
+        Parent root;
+        Stage stage;
+        stage = (Stage) goback.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("start.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
