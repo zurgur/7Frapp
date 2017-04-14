@@ -54,18 +54,6 @@ public class Login{
         }
     }
 
-
-
-    public void searchAction(ActionEvent actionEvent) throws IOException{
-        Parent root;
-        Stage stage;
-        stage = (Stage) tilBaka.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("start.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
     public void StartAction(ActionEvent actionEvent) throws IOException {
         Parent root;
         Stage stage;
