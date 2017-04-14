@@ -86,4 +86,61 @@ public class tengingVidGagnagrunn {
         }
         return to;
     }
+    public ArrayList<String>getDate(){
+        ArrayList<String> time = new ArrayList<>();
+
+        try {
+            java.sql.Connection con = connection();
+            //tengist SQLite gagnagrunninum
+            //gerir statement sem tekkur allt úr töfnunni
+            Statement statement = con.createStatement();
+            String s = "SELECT * " +
+                    "FROM Flights"; //+
+
+            //executar og finnur allt í töfnunni
+            statement.execute(s);
+            //hluur sem er með því sem kom út
+            ResultSet rs = statement.getResultSet();
+            //while sem fer í geggn um result göggnin
+            while( rs.next() ) {
+                String name = rs.getString("date");
+                time.add(name);
+            }
+            // lokar gagnagruninnum svo hann geti verið nottaður afftur
+            statement.close();
+            con.close();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return time;
+    }
+
+    public ArrayList<String>getTime(){
+        ArrayList<String> time = new ArrayList<>();
+
+        try {
+            java.sql.Connection con = connection();
+            //tengist SQLite gagnagrunninum
+            //gerir statement sem tekkur allt úr töfnunni
+            Statement statement = con.createStatement();
+            String s = "SELECT * " +
+                    "FROM Flights"; //+
+
+            //executar og finnur allt í töfnunni
+            statement.execute(s);
+            //hluur sem er með því sem kom út
+            ResultSet rs = statement.getResultSet();
+            //while sem fer í geggn um result göggnin
+            while( rs.next() ) {
+                String name = rs.getString("time");
+                time.add(name);
+            }
+            // lokar gagnagruninnum svo hann geti verið nottaður afftur
+            statement.close();
+            con.close();
+        } catch (SQLException e1) {
+            e1.printStackTrace();
+        }
+        return time;
+    }
 }
