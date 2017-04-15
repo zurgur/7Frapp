@@ -39,6 +39,7 @@ public class Search {
         String departurText = departur.getText();
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
+        System.out.println(dateText);
         ArrayList<String> tilEr = searchForFlight(departurText,arivalText,dateText);
         System.out.println(tilEr);
         if (morgun.isSelected()){
@@ -56,12 +57,11 @@ public class Search {
         // fer í gegn um arry-ana
         ArrayList<String> fraTil = new ArrayList<>();
         for(int i = 0; i<fra.size();i++){
-            char fyrsti = (time.get(i)).charAt(0);
-            char seini = (time.get(i).charAt(1));
-            String strVal = String.valueOf(fyrsti + seini);
-            int tim = Integer.parseInt(strVal);
+            String Str = time.get(0).substring(0,2);
+            int tim = Integer.parseInt(Str);
             System.out.println(tim);
-            if (tim>=0 && tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
+
+            if (tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
                 fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
 
@@ -77,6 +77,7 @@ public class Search {
                     && (data.get(i)).equals(date)){
                 fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
             }
+
 
         }
         return fraTil;

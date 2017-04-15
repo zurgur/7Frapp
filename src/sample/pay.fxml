@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Pay">
+   <children>
+      <Pane layoutX="15.0" layoutY="9.0" prefHeight="379.0" prefWidth="569.0">
+         <children>
+            <JFXButton fx:id="pay" buttonType="RAISED" layoutX="295.0" layoutY="326.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Pay" textFill="WHITE" />
+         </children></Pane>
+      <JFXButton fx:id="goback" buttonType="RAISED" layoutX="204.0" layoutY="336.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
+   </children>
+</AnchorPane>
