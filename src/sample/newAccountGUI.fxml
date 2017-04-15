@@ -6,17 +6,26 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+<AnchorPane prefHeight="477.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newAccount">
    <children>
-      <Pane layoutX="32.0" layoutY="28.0" prefHeight="333.0" prefWidth="533.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="477.0" prefWidth="548.0" style="-fx-background-color: #ffffff;">
          <children>
-            <JFXPasswordField fx:id="password" focusColor="#09b6bc" layoutX="148.0" layoutY="149.0" prefHeight="35.0" prefWidth="238.0" promptText="Password" />
-            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="166.0" layoutY="229.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
-            <JFXButton fx:id="goback" buttonType="RAISED" layoutX="297.0" layoutY="229.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
-            <TextFlow layoutX="147.0" layoutY="14.0" prefHeight="45.0" prefWidth="238.0" />
-            <JFXTextField fx:id="user" focusColor="#09b6bc" layoutX="148.0" layoutY="114.0" prefHeight="35.0" prefWidth="238.0" promptText="Username" />
+            <JFXPasswordField fx:id="password" focusColor="#09b6bc" layoutX="147.0" layoutY="305.0" prefHeight="35.0" prefWidth="238.0" promptText="Password" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="163.0" layoutY="410.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
+            <JFXButton fx:id="goback" buttonType="RAISED" layoutX="294.0" layoutY="410.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
+            <JFXTextField fx:id="user" focusColor="#09b6bc" layoutX="147.0" layoutY="265.0" prefHeight="35.0" prefWidth="238.0" promptText="Username" />
+            <JFXTextField fx:id="fullName" focusColor="#09b6bc" layoutX="147.0" layoutY="145.0" prefHeight="35.0" prefWidth="238.0" promptText="Full Name" />
+            <JFXTextField fx:id="email" focusColor="#09b6bc" layoutX="147.0" layoutY="185.0" prefHeight="35.0" prefWidth="238.0" promptText="Email" />
+            <JFXTextField fx:id="phoneNumber" focusColor="#09b6bc" layoutX="147.0" layoutY="225.0" prefHeight="35.0" prefWidth="238.0" promptText="Phone Number" />
+            <JFXPasswordField fx:id="passwordAgain" focusColor="#09b6bc" layoutX="147.0" layoutY="345.0" prefHeight="35.0" prefWidth="238.0" promptText="Password Again" />
+            <Text layoutX="173.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill in your information below" textAlignment="CENTER" wrappingWidth="186.13671875">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />

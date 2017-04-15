@@ -6,7 +6,8 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
    <children>
@@ -15,9 +16,13 @@
             <JFXTextField fx:id="user" focusColor="#09b6bc" layoutX="148.0" layoutY="70.0" prefHeight="35.0" prefWidth="238.0" promptText="Username" />
             <JFXPasswordField fx:id="password" focusColor="#09b6bc" layoutX="148.0" layoutY="149.0" prefHeight="35.0" prefWidth="238.0" promptText="Password" />
             <JFXButton fx:id="login" buttonType="RAISED" layoutX="167.0" layoutY="222.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Log In" textFill="WHITE" />
-            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="288.0" layoutY="222.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="288.0" layoutY="222.0" mnemonicParsing="false" onAction="#SignUpAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
             <JFXButton fx:id="goback" buttonType="RAISED" layoutX="227.0" layoutY="280.0" mnemonicParsing="false" onAction="#StartAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
-            <TextFlow layoutX="147.0" layoutY="14.0" prefHeight="45.0" prefWidth="238.0" />
+            <Text layoutX="166.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please log in below" wrappingWidth="201.13671875">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />

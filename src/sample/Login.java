@@ -21,8 +21,6 @@ import java.util.ResourceBundle;
  */
 public class Login{
     //búa til FXML hluti svo við getum notað þá ur skjalinu
-    @FXML
-    private Button tilBaka;
 
     @FXML
     private JFXTextField user;
@@ -59,6 +57,16 @@ public class Login{
         Stage stage;
         stage = (Stage) goback.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void SignUpAction(ActionEvent actionEvent) throws IOException {
+        Parent root;
+        Stage stage;
+        stage = (Stage) signup.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("newAccountGUI.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
