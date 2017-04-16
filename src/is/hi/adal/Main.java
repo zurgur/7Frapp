@@ -1,4 +1,4 @@
-package sample;
+package is.hi.adal;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

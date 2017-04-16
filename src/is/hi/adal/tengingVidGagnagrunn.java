@@ -1,4 +1,4 @@
-package sample;
+package is.hi.adal;
 
 /**
  * Created by Alexander on 4/11/2017.
