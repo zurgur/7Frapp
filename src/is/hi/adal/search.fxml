@@ -11,7 +11,7 @@
    <children>
       <JFXTextField id="myDepartur" fx:id="departur" layoutX="213.0" layoutY="67.0" prefHeight="25.0" prefWidth="174.0" promptText="Departure" />
       <JFXTextField fx:id="arival" layoutX="213.0" layoutY="123.0" prefHeight="25.0" prefWidth="174.0" promptText="Arival" />
-      <JFXButton fx:id="leita" layoutX="241.0" layoutY="324.0" onAction="#leitaAction" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #11e41c;" text="Search" />
+      <JFXButton fx:id="back" layoutX="302.0" layoutY="321.0" onAction="#goBack" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #11e41c;" text="Go Back" />
       <JFXRadioButton fx:id="hadeigi" layoutX="250.0" layoutY="288.0" text="noon flight">
          <toggleGroup>
             <ToggleGroup fx:id="timi" />
@@ -20,5 +20,6 @@
       <JFXRadioButton fx:id="kvöld" layoutX="353.0" layoutY="288.0" text="evening flight" toggleGroup="$timi" />
       <JFXDatePicker fx:id="date2" defaultColor="#11e41c" layoutX="215.0" layoutY="231.0" onAction="#setTimi2Action" prefHeight="28.0" prefWidth="174.0" promptText="Arival Date" />
       <JFXDatePicker fx:id="date" defaultColor="#11e41c" layoutX="215.0" layoutY="186.0" onAction="#setTimi1Action" prefHeight="28.0" prefWidth="174.0" promptText="Departure Date" />
+      <JFXButton fx:id="leita1" layoutX="180.0" layoutY="321.0" onAction="#leitaAction" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #11e41c;" text="Search" />
      </children>
 </AnchorPane>

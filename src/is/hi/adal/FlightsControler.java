@@ -1,11 +1,17 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXListView;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -20,6 +26,8 @@ public class FlightsControler implements Initializable{
     JFXListView outList;
     @FXML
     JFXListView homeList;
+    @FXML
+    Button back;
 
     private ArrayList<String> out = new ArrayList<>();
 
@@ -38,7 +46,7 @@ public class FlightsControler implements Initializable{
                 System.out.println("dem");
             }
         }
-        if (home.size()>0){
+        if (Search.timi2Valin){
             for(int i = 0; i<home.size();i++){
                 try {
                     Label lbl = new Label(home.get(i));
@@ -61,5 +69,15 @@ public class FlightsControler implements Initializable{
 
     public void setHome(ArrayList<String> home) {
         this.home = home;
+    }
+
+    public void BackAction(ActionEvent actionEvent) throws IOException {
+        Parent root;
+        Stage stage;
+        stage = (Stage) back.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("search.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

@@ -36,6 +36,8 @@ public class Search {
     RadioButton kvöld;
     @FXML
     DatePicker date2;
+    @FXML
+    Button back;
 
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
     ArrayList<String> fra = t.getFrom();
@@ -43,7 +45,7 @@ public class Search {
     ArrayList<String> data = t.getDate();
     ArrayList<String> time = t.getTime();
     Boolean timi1Valin = false;
-    Boolean timi2Valin = false;
+    public  static Boolean timi2Valin = false;
     public static ArrayList<String> found1;
     public static ArrayList<String> found2;
 
@@ -140,5 +142,15 @@ public class Search {
 
     public ArrayList<String> getFound2() {
         return found2;
+    }
+
+    public void goBack(ActionEvent actionEvent) throws IOException {
+        Parent root;
+        Stage stage;
+        stage = (Stage) back.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("start.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
