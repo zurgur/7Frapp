@@ -44,6 +44,8 @@ public class Search {
     ArrayList<String> time = t.getTime();
     Boolean timi1Valin = false;
     Boolean timi2Valin = false;
+    private ArrayList<String> found1;
+    private ArrayList<String> found2;
 
     public void leitaAction(ActionEvent actionEvent) throws IOException {
         if(timi1Valin && timi2Valin){
@@ -62,14 +64,26 @@ public class Search {
 
     }
 
-    private void oneWay() {
+    private void oneWay() throws IOException {
         String departurText = departur.getText();
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
-        ArrayList<String> tilEr = searchForFlight(departurText,arivalText,dateText);
+        found1 = searchForFlight(departurText,arivalText,dateText);
         System.out.println("one way flug:");
-        System.out.println(tilEr);
+        System.out.println(found1);
+        startList();
     }
+
+    private void startList() throws IOException {
+        Parent root;
+        Stage stage;
+        stage = (Stage) leita.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("Flights.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 
     private void backAndForth() {
         String departurText = departur.getText();
@@ -77,11 +91,11 @@ public class Search {
         String dateText = (date.getValue()).toString();
         String date2Text = (date2.getValue()).toString();
         System.out.println("flug útt");
-        ArrayList<String> utt = searchForFlight(departurText, arivalText, dateText);
-        System.out.println(utt);
+        found1 = searchForFlight(departurText, arivalText, dateText);
+        System.out.println(found1);
         System.out.println("flug heim:");
-        ArrayList<String> heim = searchForFlight(arivalText,departurText,date2Text);
-        System.out.println(heim);
+        found2 = searchForFlight(arivalText,departurText,date2Text);
+        System.out.println(found2);
     }
 
     public void setTimi1Action(ActionEvent actionEvent){
@@ -118,4 +132,11 @@ public class Search {
         return fraTil;
     }
 
+    public ArrayList<String> getFound1() {
+        return found1;
+    }
+
+    public ArrayList<String> getFound2() {
+        return found2;
+    }
 }
