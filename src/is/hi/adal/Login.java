@@ -1,4 +1,4 @@
-package sample;
+package is.hi.adal;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

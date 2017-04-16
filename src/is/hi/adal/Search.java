@@ -1,4 +1,4 @@
-package sample;
+package is.hi.adal;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -43,6 +43,9 @@ public class Search {
             backAndForth();
         } else if(timi1Valin){
             oneWay();
+        }else {
+            //kóði fyrir puopup sem byður notanda um að velja dag.
+
         }
 
     }
