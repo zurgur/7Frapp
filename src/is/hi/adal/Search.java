@@ -44,8 +44,8 @@ public class Search {
     ArrayList<String> time = t.getTime();
     Boolean timi1Valin = false;
     Boolean timi2Valin = false;
-    private ArrayList<String> found1;
-    private ArrayList<String> found2;
+    public static ArrayList<String> found1;
+    public static ArrayList<String> found2;
 
     public void leitaAction(ActionEvent actionEvent) throws IOException {
         if(timi1Valin && timi2Valin){
@@ -69,6 +69,7 @@ public class Search {
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
         found1 = searchForFlight(departurText,arivalText,dateText);
+
         System.out.println("one way flug:");
         System.out.println(found1);
         startList();
@@ -85,7 +86,7 @@ public class Search {
     }
 
 
-    private void backAndForth() {
+    private void backAndForth() throws IOException {
         String departurText = departur.getText();
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
@@ -96,6 +97,7 @@ public class Search {
         System.out.println("flug heim:");
         found2 = searchForFlight(arivalText,departurText,date2Text);
         System.out.println(found2);
+        startList();
     }
 
     public void setTimi1Action(ActionEvent actionEvent){
