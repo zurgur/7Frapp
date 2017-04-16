@@ -1,16 +1,21 @@
-package is.hi.adal;
+package sample;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by Alexander on 4/11/2017.
@@ -19,19 +24,25 @@ public class Login{
     //búa til FXML hluti svo við getum notað þá ur skjalinu
 
     @FXML
-    private TextField user;
+    private JFXTextField user;
 
     @FXML
-    private PasswordField password;
+    private JFXPasswordField password;
 
     @FXML
-    private Button login;
+    private JFXButton login;
 
     @FXML
-    private Button signup;
+    private JFXButton signup;
 
     @FXML
-    private Button goback;
+    private JFXButton goback;
+
+    tengingVidGagnagrunn t = new tengingVidGagnagrunn();
+    //ArrayList<String> userName = t.getUsername();
+    ArrayList<String> til = t.getTo();
+    ArrayList<String> data = t.getDate();
+    ArrayList<String> time = t.getTime();
 
     @FXML
     void makeLogin(ActionEvent event)
