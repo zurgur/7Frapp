@@ -49,6 +49,8 @@ public class FlightsControler implements Initializable{
                 }
             }
         }
+        homeList.setExpanded(Boolean.TRUE);
+        outList.setExpanded(Boolean.TRUE);
 
     }
 

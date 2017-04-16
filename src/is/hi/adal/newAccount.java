@@ -1,4 +1,6 @@
-package is.hi.adal;/**
+package is.hi.adal;
+
+/**
  * Created by BrynjaPalina on 14/04/2017.
  */
 
@@ -12,6 +14,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import sample.tengingVidGagnagrunnFyrirUser;
 
 import java.io.IOException;
 
