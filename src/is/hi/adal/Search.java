@@ -1,11 +1,18 @@
 package is.hi.adal;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 /**
@@ -38,14 +45,19 @@ public class Search {
     Boolean timi1Valin = false;
     Boolean timi2Valin = false;
 
-    public void leitaAction(ActionEvent actionEvent){
+    public void leitaAction(ActionEvent actionEvent) throws IOException {
         if(timi1Valin && timi2Valin){
             backAndForth();
         } else if(timi1Valin){
             oneWay();
         }else {
             //kóði fyrir puopup sem byður notanda um að velja dag.
-
+            Stage stage = new Stage();
+            Parent root = FXMLLoader.load(getClass().getResource("errorNoDate.fxml"));
+            stage.setScene(new Scene(root));
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initOwner(leita.getScene().getWindow());
+            stage.showAndWait();
         }
 
     }

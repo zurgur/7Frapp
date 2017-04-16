@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="241.0" prefWidth="484.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Search">
+   <children>
+      <Text layoutX="135.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Error you must choose a departure date." />
+   </children>
+</AnchorPane>
