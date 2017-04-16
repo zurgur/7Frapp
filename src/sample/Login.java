@@ -14,6 +14,7 @@ import javafx.scene.control.Button;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 /**
@@ -36,6 +37,12 @@ public class Login{
 
     @FXML
     private JFXButton goback;
+
+    tengingVidGagnagrunn t = new tengingVidGagnagrunn();
+    //ArrayList<String> userName = t.getUsername();
+    ArrayList<String> til = t.getTo();
+    ArrayList<String> data = t.getDate();
+    ArrayList<String> time = t.getTime();
 
     @FXML
     void makeLogin(ActionEvent event)

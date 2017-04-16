@@ -11,21 +11,22 @@
 
 <AnchorPane prefHeight="477.0" prefWidth="544.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.newAccount">
    <children>
-      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="477.0" prefWidth="548.0" style="-fx-background-color: #ffffff;">
+      <Pane layoutX="-1.0" layoutY="-1.0" prefHeight="509.0" prefWidth="548.0" style="-fx-background-color: #ffffff;">
          <children>
-            <JFXPasswordField fx:id="password" focusColor="#09b6bc" layoutX="147.0" layoutY="305.0" prefHeight="35.0" prefWidth="238.0" promptText="Password" />
-            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="163.0" layoutY="410.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
-            <JFXButton fx:id="goback" buttonType="RAISED" layoutX="294.0" layoutY="410.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
-            <JFXTextField fx:id="user" focusColor="#09b6bc" layoutX="147.0" layoutY="265.0" prefHeight="35.0" prefWidth="238.0" promptText="Username" />
-            <JFXTextField fx:id="fullName" focusColor="#09b6bc" layoutX="147.0" layoutY="145.0" prefHeight="35.0" prefWidth="238.0" promptText="Full Name" />
-            <JFXTextField fx:id="email" focusColor="#09b6bc" layoutX="147.0" layoutY="185.0" prefHeight="35.0" prefWidth="238.0" promptText="Email" />
-            <JFXTextField fx:id="phoneNumber" focusColor="#09b6bc" layoutX="147.0" layoutY="225.0" prefHeight="35.0" prefWidth="238.0" promptText="Phone Number" />
-            <JFXPasswordField fx:id="passwordAgain" focusColor="#09b6bc" layoutX="147.0" layoutY="345.0" prefHeight="35.0" prefWidth="238.0" promptText="Password Again" />
+            <JFXPasswordField fx:id="password" focusColor="#09b6bc" layoutX="147.0" layoutY="295.0" prefHeight="35.0" prefWidth="238.0" promptText="Password" />
+            <JFXButton fx:id="signup" buttonType="RAISED" layoutX="163.0" layoutY="437.0" mnemonicParsing="false" onAction="#SuccessAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Sign up" textFill="WHITE" />
+            <JFXButton fx:id="goback" buttonType="RAISED" layoutX="294.0" layoutY="437.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="35.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
+            <JFXTextField fx:id="user" focusColor="#09b6bc" layoutX="147.0" layoutY="255.0" prefHeight="35.0" prefWidth="238.0" promptText="Username" />
+            <JFXTextField fx:id="fullName" focusColor="#09b6bc" layoutX="147.0" layoutY="135.0" prefHeight="35.0" prefWidth="238.0" promptText="Full Name" />
+            <JFXTextField fx:id="email" focusColor="#09b6bc" layoutX="147.0" layoutY="175.0" prefHeight="35.0" prefWidth="238.0" promptText="Email" />
+            <JFXTextField fx:id="phoneNumber" focusColor="#09b6bc" layoutX="147.0" layoutY="215.0" prefHeight="35.0" prefWidth="238.0" promptText="Phone Number" />
+            <JFXPasswordField fx:id="passwordAgain" focusColor="#09b6bc" layoutX="147.0" layoutY="335.0" prefHeight="35.0" prefWidth="238.0" promptText="Password Again" />
             <Text layoutX="173.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill in your information below" textAlignment="CENTER" wrappingWidth="186.13671875">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
+            <JFXTextField fx:id="errorMessage" alignment="CENTER" disable="true" editable="false" layoutX="147.0" layoutY="395.0" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #ffffff;" visible="false" />
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />
