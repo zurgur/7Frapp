@@ -1,4 +1,4 @@
-package sample;
+package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 /**
- * Created by Alexander on 4/11/2017.
+ * Created by Brynja Palina on 4/11/2017.
  */
 public class NewAccountSuccess {
     //búa til FXML hluti svo við getum notað þá ur skjalinu
