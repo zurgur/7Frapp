@@ -20,6 +20,7 @@ import java.util.ResourceBundle;
  * Created by Alexander on 4/16/2017.
  */
 public class FlightsControler implements Initializable{
+    //FXML til þess að tengjast því sem er á skjá
     @FXML
     Button Continue;
     @FXML
@@ -28,15 +29,17 @@ public class FlightsControler implements Initializable{
     JFXListView homeList;
     @FXML
     Button back;
-
+    //inizalize array lista
     private ArrayList<String> out = new ArrayList<>();
 
     private ArrayList<String> home = new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //lætt out og hom hafa rétt gögn :)
         out = Search.found1;
         home = Search.found2;
+        //fer í gegnum array listan og set í lista
         for(int i = 0; i<out.size();i++){
             try {
                 Label lbl = new Label(out.get(i)+i);
@@ -46,6 +49,7 @@ public class FlightsControler implements Initializable{
                 System.out.println("dem");
             }
         }
+        //sama og fyrir ofan nema ég gái hvort það passi við
         if (Search.timi2Valin){
             for(int i = 0; i<home.size();i++){
                 try {
@@ -57,6 +61,7 @@ public class FlightsControler implements Initializable{
                 }
             }
         }
+        // læt listana vilja stæka :)
         homeList.setExpanded(Boolean.TRUE);
         outList.setExpanded(Boolean.TRUE);
 
@@ -71,6 +76,7 @@ public class FlightsControler implements Initializable{
         this.home = home;
     }
 
+    //fall fyrir til bakka takkan og fer til baka á search skjá 
     public void BackAction(ActionEvent actionEvent) throws IOException {
         Parent root;
         Stage stage;

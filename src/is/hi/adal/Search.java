@@ -19,7 +19,7 @@ import java.util.ArrayList;
  * Created by Alexander on 7.4.2017.
  */
 public class Search {
-    //búa til FXML hluti svo við getum notað þá ur skjalinu
+    //búa til FXML hluti svo við getum notað þá ur fxml skjalinu
     @FXML
     Button leita;
     @FXML
@@ -38,18 +38,23 @@ public class Search {
     DatePicker date2;
     @FXML
     Button back;
-
+    //tengjumst gagnagrunninum sem er sqlite
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
+    //gerum Array lista fyrir gögninn í sql-inu
     ArrayList<String> fra = t.getFrom();
     ArrayList<String> til = t.getTo();
     ArrayList<String> data = t.getDate();
     ArrayList<String> time = t.getTime();
+    //boolean sem gefa til kyna að dagsetning hefur verið valin
     Boolean timi1Valin = false;
+    //geri public því ég nota þessar breytur í lista fallinu (ég veit það er ekki sniðugt)
     public  static Boolean timi2Valin = false;
     public static ArrayList<String> found1;
     public static ArrayList<String> found2;
 
+    //fall þegar ýtt er á search
     public void leitaAction(ActionEvent actionEvent) throws IOException {
+        //ef báðir tímar eru valdir þá vil notandi fara farm og til bakka annars bara eina leið
         if(timi1Valin && timi2Valin){
             backAndForth();
         } else if(timi1Valin){
@@ -66,17 +71,18 @@ public class Search {
 
     }
 
+    //fall fyrir one way flug :)
     private void oneWay() throws IOException {
+        //nær í gögnn sem notandi hefur vaðið
         String departurText = departur.getText();
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
+        //setur viðeigandi gögn á réttan stað
         found1 = searchForFlight(departurText,arivalText,dateText);
-
-        System.out.println("one way flug:");
-        System.out.println(found1);
+        //staratar lista skráni
         startList();
     }
-
+    //fall sem breitir yfir í glugga fyrir lista skrána
     private void startList() throws IOException {
         Parent root;
         Stage stage;
@@ -87,21 +93,17 @@ public class Search {
         stage.show();
     }
 
-
+    //fall flug framm og til baka sjá fall að ofan því þau eru næstum því eins :)
     private void backAndForth() throws IOException {
         String departurText = departur.getText();
         String arivalText = arival.getText();
         String dateText = (date.getValue()).toString();
         String date2Text = (date2.getValue()).toString();
-        System.out.println("flug útt");
         found1 = searchForFlight(departurText, arivalText, dateText);
-        System.out.println(found1);
-        System.out.println("flug heim:");
         found2 = searchForFlight(arivalText,departurText,date2Text);
-        System.out.println(found2);
         startList();
     }
-
+    //events sem setja timi1Valin í true þegar það er ýtt á þau
     public void setTimi1Action(ActionEvent actionEvent){
         timi1Valin = true;
     }
@@ -109,6 +111,7 @@ public class Search {
         timi2Valin = true;
     }
 
+    //fal sem skilar flugum sem passa við gögnin sem eru gefin
     public ArrayList<String> searchForFlight(String departure, String arrival,String date){
         //prufa verður að hafa try og catch fyrir SQLite tengniguna
         // fer í gegn um arry-ana
@@ -144,7 +147,9 @@ public class Search {
         return found2;
     }
 
+    //fall sem fer til baka á start skjáinn
     public void goBack(ActionEvent actionEvent) throws IOException {
+        //setur tima1 og 2 í fals til þess að núll stilla
         timi1Valin = false;
         timi2Valin = false;
         Parent root;
