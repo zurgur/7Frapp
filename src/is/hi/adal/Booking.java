@@ -1,5 +1,6 @@
 package is.hi.adal;
 
+import com.jfoenix.controls.JFXTextField;
 import com.sun.org.apache.xpath.internal.operations.Variable;
 import javafx.scene.control.DatePicker;
 
@@ -8,22 +9,26 @@ import javafx.scene.control.DatePicker;
  */
 public class Booking {
 
-    private String FirstName;
-    private String LastName;
+    private JFXTextField FirstName;
+    private JFXTextField LastName;
     private DatePicker Birthday;
-    private Variable PhoneNumber;
-    private Variable PhoneSOS;
+    private JFXTextField PhoneNumber;
+    private JFXTextField PhoneSOS;
 
 
     private String emailAddress;
 
-    private String name;
+    private String name, PhoneNum, PeSOS;
 
-    private Person(FirstName, LastName, Birthday) {
+    private Person() {
 
-        name = FirstName + " " + LastName;
+        name = FirstName.getText() + " " + LastName.getText();
         Birthday.getConverter();
         emailAddress = getEmailAddress(emailAddress);
+        PhoneNum = PhoneNumber.getText();
+        PeSOS = PhoneNumber.getText();
+        return (name+Birthday+emailAddress+PhoneNum+PeSOS);
+
     }
 
     private String getEmailAddress(String emailAddress) {
@@ -35,35 +40,28 @@ public class Booking {
         new DatePicker();
         return Birthday;
     }
+
     public void Person() {
         System.out.println(name + ", " + this.getAge());
     }
 
-    public Variable getPhoneNumber() {
-        return PhoneNumber;
-    }
-
-    public void setPhoneNumber(Variable phoneNumber) {
-        PhoneNumber = phoneNumber;
-    }
-
-    public Variable getPhoneSOS() {
-        return PhoneSOS;
-    }
-
-    public void setPhoneSOS(Variable phoneSOS) {
-        PhoneSOS = phoneSOS;
-    }
-
-    public void setFirstName(String firstName) {
+    public void setFirstName(JFXTextField firstName) {
         FirstName = firstName;
     }
 
-    public void setLastName(String lastName) {
+    public void setLastName(JFXTextField lastName) {
         LastName = lastName;
     }
 
     public void setBirthday(DatePicker birthday) {
         Birthday = birthday;
+    }
+
+    public void setPhoneNumber(JFXTextField phoneNumber) {
+        PhoneNumber = phoneNumber;
+    }
+
+    public void setPhoneSOS(JFXTextField phoneSOS) {
+        PhoneSOS = phoneSOS;
     }
 }
