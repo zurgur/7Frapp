@@ -76,7 +76,7 @@ public class FlightsControler implements Initializable{
         this.home = home;
     }
 
-    //fall fyrir til bakka takkan og fer til baka á search skjá 
+    //fall fyrir til bakka takkan og fer til baka á search skjá
     public void BackAction(ActionEvent actionEvent) throws IOException {
         Parent root;
         Stage stage;

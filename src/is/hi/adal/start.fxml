@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Controller">
+<GridPane alignment="center" hgap="10" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="362.0" prefWidth="494.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Controller">
    <columnConstraints>
       <ColumnConstraints />
    </columnConstraints>
@@ -16,15 +16,15 @@
       <RowConstraints />
    </rowConstraints>
    <children>
-      <Pane prefHeight="361.0" prefWidth="492.0">
+      <Pane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="492.0">
          <children>
-            <JFXButton fx:id="Search" buttonType="RAISED" layoutX="190.0" layoutY="122.0" onAction="#searchAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE" />
-            <JFXButton fx:id="Loggin" buttonType="RAISED" layoutX="190.0" layoutY="228.0" onAction="#LoginAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #48d611;" text="Log In" textFill="WHITE" />
             <Text layoutX="190.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to BASH✈" textAlignment="CENTER" wrappingWidth="112.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
+            <JFXButton fx:id="Loggin" buttonType="RAISED" layoutX="190.0" layoutY="228.0" onAction="#LoginAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #48d611;" text="Log In" textFill="WHITE" />
+            <JFXButton fx:id="Search" buttonType="RAISED" layoutX="190.0" layoutY="128.0" onAction="#searchAction" prefHeight="59.0" prefWidth="112.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE" />
          </children>
       </Pane>
    </children>
