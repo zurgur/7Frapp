@@ -26,7 +26,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <JFXTextField fx:id="errorMessage" alignment="CENTER" disable="true" editable="false" layoutX="147.0" layoutY="395.0" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #ffffff;" visible="false" />
+            <JFXTextField fx:id="errorMessage" alignment="CENTER" disable="true" editable="false" layoutX="147.0" layoutY="395.0" prefHeight="25.0" prefWidth="238.0" style="-fx-background-color: #ffffff;" unFocusColor="WHITE" />
          </children>
          <effect>
             <DropShadow blurType="GAUSSIAN" />

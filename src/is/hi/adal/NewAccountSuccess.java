@@ -46,7 +46,7 @@ public class NewAccountSuccess {
         Parent root;
         Stage stage;
         stage = (Stage) goHome.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("home.fxml"));
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
