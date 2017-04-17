@@ -1,7 +1,7 @@
-package sample;
+package is.hi.adal;
 
 /**
- * Created by Alexander on 4/11/2017.
+ * Created by Brynja Palina on 4/11/2017.
  */
 
 import java.sql.*;
@@ -11,9 +11,6 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-/**
- * Created by Brynja Palina on 16.3.2017.
- */
 //fuking magic
 public class tengingVidGagnagrunnFyrirUser {
 
