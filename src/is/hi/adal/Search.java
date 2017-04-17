@@ -145,6 +145,8 @@ public class Search {
     }
 
     public void goBack(ActionEvent actionEvent) throws IOException {
+        timi1Valin = false;
+        timi2Valin = false;
         Parent root;
         Stage stage;
         stage = (Stage) back.getScene().getWindow();
