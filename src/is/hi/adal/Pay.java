@@ -32,8 +32,6 @@ public class Pay {
     private Button back;
 
 
-
-
-    
-
+    public void LoginAction(ActionEvent actionEvent) {
+    }
 }

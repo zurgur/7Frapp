@@ -33,6 +33,11 @@ public class FlightsControler implements Initializable{
     private ArrayList<String> out = new ArrayList<>();
 
     private ArrayList<String> home = new ArrayList<>();
+    private Object outObject;
+    private Object homeObject;
+    private int outIndex;
+    private int homeIndex;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -44,7 +49,6 @@ public class FlightsControler implements Initializable{
             try {
                 Label lbl = new Label(out.get(i)+i);
                 outList.getItems().add(lbl);
-                System.out.println(i);
             }catch (Exception e){
                 System.out.println("dem");
             }
@@ -55,7 +59,6 @@ public class FlightsControler implements Initializable{
                 try {
                     Label lbl = new Label(home.get(i));
                     homeList.getItems().add(lbl);
-                    System.out.println(i);
                 }catch (Exception e){
                     System.out.println("dem");
                 }
@@ -85,5 +88,37 @@ public class FlightsControler implements Initializable{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    //yfir í pay :)
+    public void ContinueAction(ActionEvent actionEvent) throws IOException {
+        outObject = outList.getSelectionModel().getSelectedItem();
+        homeObject = homeList.getSelectionModel().getSelectedItem();
+        outIndex = outList.getSelectionModel().getSelectedIndex();
+        homeIndex = homeList.getSelectionModel().getSelectedIndex();
+        //yfir í pay
+        //sunna over end out :)
+        Parent root;
+        Stage stage;
+        stage = (Stage) back.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("pay.fxml"));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public Object getOutObject() {
+        return outObject;
+    }
+
+    public Object getHomeObject() {
+        return homeObject;
+    }
+
+    public int getOutIndex() {
+        return outIndex;
+    }
+
+    public int getHomeIndex() {
+        return homeIndex;
     }
 }
