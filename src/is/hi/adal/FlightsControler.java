@@ -44,7 +44,6 @@ public class FlightsControler implements Initializable{
             try {
                 Label lbl = new Label(out.get(i)+i);
                 outList.getItems().add(lbl);
-                System.out.println(i);
             }catch (Exception e){
                 System.out.println("dem");
             }
@@ -85,5 +84,9 @@ public class FlightsControler implements Initializable{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void ContinueAction(ActionEvent actionEvent) {
+        System.out.println(2);
     }
 }
