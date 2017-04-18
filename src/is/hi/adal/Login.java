@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.sql.Connection;
@@ -128,10 +129,12 @@ public class Login implements Initializable{
         try {
             if(isLogin(user.getText(), password.getText()))
             {
-                Parent root;
                 Stage stage;
+                FXMLLoader loader = new FXMLLoader();
+                Pane root = loader.load(getClass().getResource("HomePage.fxml").openStream());
                 stage = (Stage) login.getScene().getWindow();
-                root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+                HomePage homepage = (HomePage)loader.getController();
+                homepage.GetUser(user.getText());
                 Scene scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
@@ -145,18 +148,6 @@ public class Login implements Initializable{
             e.printStackTrace();
         }
     }
-
-    /*public void CheckBoxAction(ActionEvent actionEvent) throws IOException
-    {
-        if(showPassword.isSelected())
-        {
-            password.setEchoChar((char)0);
-        }
-        else
-        {
-            password.setEchoChar('*');
-        }
-    }*/
 
 
     public void StartAction(ActionEvent actionEvent) throws IOException
