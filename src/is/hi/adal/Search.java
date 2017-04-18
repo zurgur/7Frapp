@@ -25,7 +25,7 @@ public class Search {
     @FXML
     TextField departur;
     @FXML
-    TextField arival;
+    TextField arrival;
     @FXML
     DatePicker date;
     @FXML
@@ -75,7 +75,7 @@ public class Search {
     private void oneWay() throws IOException {
         //nær í gögnn sem notandi hefur vaðið
         String departurText = departur.getText();
-        String arivalText = arival.getText();
+        String arivalText = arrival.getText();
         String dateText = (date.getValue()).toString();
         //setur viðeigandi gögn á réttan stað
         found1 = searchForFlight(departurText,arivalText,dateText);
@@ -96,7 +96,7 @@ public class Search {
     //fall flug framm og til baka sjá fall að ofan því þau eru næstum því eins :)
     private void backAndForth() throws IOException {
         String departurText = departur.getText();
-        String arivalText = arival.getText();
+        String arivalText = arrival.getText();
         String dateText = (date.getValue()).toString();
         String date2Text = (date2.getValue()).toString();
         found1 = searchForFlight(departurText, arivalText, dateText);
