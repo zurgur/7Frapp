@@ -59,20 +59,33 @@ public class newAccount extends Application {
     }
 
     public void SuccessAction(ActionEvent actionEvent) throws IOException {
-        makeNewAccount();
-        Parent root;
-        Stage stage;
-        stage = (Stage) signup.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("NewAccountSuccess.fxml"));
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        int account = makeNewAccount();
+        if(account == 1)
+        {
+            insertNewMember();
+            Parent root;
+            Stage stage;
+            stage = (Stage) signup.getScene().getWindow();
+            root = FXMLLoader.load(getClass().getResource("NewAccountSuccess.fxml"));
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else if(account == 0)
+        {
+            System.out.println("vantar");
+            errorMessage.setText("Please fill in all your information");
+        }
+        else if(account == -1)
+        {
+            System.out.println("password");
+            errorMessage.setText("Passwords don't match each other");
+        }
+
     }
 
-    public void makeNewAccount()
+    public int makeNewAccount()
     {
-        errorMessage.setText("");
-
         String username = user.getText();
         String name = fullName.getText();
         String mail = email.getText();
@@ -82,28 +95,49 @@ public class newAccount extends Application {
 
         String [] newAccount = {username, name, mail, phone, pass, passAgain};
         int count = 0;
-
-        for(int i=0; i< newAccount.length; i++)
+        int tilfelli = 0;
+        for(int i=0; i<newAccount.length; i++)
         {
-            if(newAccount[i] != null)
+            System.out.println("forlykkja");
+            if(newAccount[i].length() != 0)
             {
                 count += 1;
+                System.out.println("lúppa"+i);
             }
-            i++;
+            else System.out.println("ekkert");
         }
+        System.out.println("count: " + count);
+        System.out.println("password: " + pass);
+        System.out.println("passwordAgain: " + passAgain);
 
-        if(count == 6 && pass == passAgain)
+        if(count == 6 && pass.equals(passAgain))
         {
-            t.insertNewUser(username, pass, name, mail, phone);
+            tilfelli = 1;
+            System.out.println("tilfelli 1");
         }
-        else if(count != 6)
+        else if(count < 6)
         {
-            errorMessage.setText("Please fill in all your information");
+            tilfelli = 0;
+            System.out.println("tilfelli 0");
         }
         else if(pass != passAgain)
         {
-            errorMessage.setText("Passwords don't match each other");
+            tilfelli = -1;
+            System.out.println("tilfelli -1");
         }
+        System.out.println("tilfelli done");
+        return tilfelli;
+    }
+
+    public void insertNewMember()
+    {
+        String username = user.getText();
+        String name = fullName.getText();
+        String mail = email.getText();
+        String phone = phoneNumber.getText();
+        String pass = password.getText();
+
+        t.insertNewUser(username, pass, name, mail, phone);
     }
 
     public static void main(String[] args) {
