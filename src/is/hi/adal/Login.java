@@ -1,22 +1,30 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.util.ResourceBundle;
 import java.io.IOException;
-import java.util.ArrayList;
+
 
 /**
  * Created by Alexander on 4/11/2017.
  */
-public class Login{
+public class Login implements Initializable{
     //búa til FXML hluti svo við getum notað þá ur skjalinu
 
     @FXML
@@ -24,6 +32,9 @@ public class Login{
 
     @FXML
     private JFXPasswordField password;
+
+    @FXML
+    private JFXTextField errorMessage;
 
     @FXML
     private JFXButton login;
@@ -34,28 +45,122 @@ public class Login{
     @FXML
     private JFXButton goback;
 
-    tengingVidGagnagrunn t = new tengingVidGagnagrunn();
-    //ArrayList<String> userName = t.getUsername();
-    ArrayList<String> til = t.getTo();
-    ArrayList<String> data = t.getDate();
-    ArrayList<String> time = t.getTime();
+    @FXML
+    private JFXCheckBox showPassword;
 
     @FXML
-    void makeLogin(ActionEvent event)
+    private Label isConnected;
+
+    Connection connection;
+
+    //If there is no connection to the database the system will shut down
+    public Login ()
     {
-        String username = user.getText();
-        String pass = password.getText();
-        if(username.equals("Genuine") && pass.equals("coder"))
+        connection = tengingVidGagnagrunnFyrirUser.Connect();
+        if(connection == null)
         {
-            System.out.println("Welcome");
+            System.exit(1);
+        }
+    }
+    //Checks if database is connected
+    public boolean isDbConnected()
+    {
+        try
+        {
+            return !connection.isClosed();
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    //Sets text about whether the database is connected or not
+    @Override
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        if(isDbConnected())
+        {
+            isConnected.setText("Connected");
         }
         else
         {
-            System.out.println("Wrong password");
+            isConnected.setText("Not Connected");
         }
     }
 
-    public void StartAction(ActionEvent actionEvent) throws IOException {
+    //Checks if username and password written in textfile is in database
+    public boolean isLogin(String user, String pass) throws SQLException
+    {
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        String query = "SELECT * FROM User WHERE username = ? AND password = ?";
+        try
+        {
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, user);
+            preparedStatement.setString(2, pass);
+
+            resultSet = preparedStatement.executeQuery();
+            if(resultSet.next())
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        catch(Exception e)
+        {
+            return false;
+        }
+
+        finally
+        {
+            preparedStatement.close();
+            resultSet.close();
+        }
+    }
+
+    public void makeLogin(ActionEvent event) throws IOException
+    {
+        try {
+            if(isLogin(user.getText(), password.getText()))
+            {
+                Parent root;
+                Stage stage;
+                stage = (Stage) login.getScene().getWindow();
+                root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            }
+            else
+            {
+                errorMessage.setText("Username and/or password is incorrect");
+            }
+        } catch (SQLException e) {
+            errorMessage.setText("Username and/or password is incorrect");
+            e.printStackTrace();
+        }
+    }
+
+    /*public void CheckBoxAction(ActionEvent actionEvent) throws IOException
+    {
+        if(showPassword.isSelected())
+        {
+            password.setEchoChar((char)0);
+        }
+        else
+        {
+            password.setEchoChar('*');
+        }
+    }*/
+
+
+    public void StartAction(ActionEvent actionEvent) throws IOException
+    {
         Parent root;
         Stage stage;
         stage = (Stage) goback.getScene().getWindow();
@@ -65,7 +170,8 @@ public class Login{
         stage.show();
     }
 
-    public void SignUpAction(ActionEvent actionEvent) throws IOException {
+    public void SignUpAction(ActionEvent actionEvent) throws IOException
+    {
         Parent root;
         Stage stage;
         stage = (Stage) signup.getScene().getWindow();
@@ -74,4 +180,6 @@ public class Login{
         stage.setScene(scene);
         stage.show();
     }
+
+
 }

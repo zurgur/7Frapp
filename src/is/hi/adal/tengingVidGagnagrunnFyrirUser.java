@@ -14,23 +14,23 @@ import java.sql.SQLException;
 //fuking magic
 public class tengingVidGagnagrunnFyrirUser {
 
-    public static Connection connect() {
-        // SQLite connection string
-        String url = "jdbc:sqlite:flight.sqlite";
-        Connection conn = null;
+    public static Connection Connect() {
         try {
-            conn = DriverManager.getConnection(url);
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            Class.forName("org.sqlite.JDBC");
+            Connection conn = DriverManager.getConnection("jdbc:sqlite:flight.sqlite");
+            return conn;
         }
-        return conn;
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
     // adds new user to database
     public void insertNewUser(String username, String password, String name, String email, String phoneNumber) {
         String sql = "INSERT INTO User(username, password, name, email, phoneNumber) VALUES(?,?,?,?,?)";
 
-        try (Connection conn = this.connect();
+        try (Connection conn = this.Connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
             pstmt.setString(2, password);
@@ -48,7 +48,7 @@ public class tengingVidGagnagrunnFyrirUser {
         ArrayList<String> username = new ArrayList<>();
 
         try {
-            Connection con = connect();
+            Connection con = Connect();
             //tengist SQLite gagnagrunninum
             //gerir statement sem tekur allt úr töflunni
             Statement statement = con.createStatement();
@@ -78,7 +78,7 @@ public class tengingVidGagnagrunnFyrirUser {
         ArrayList<String> password = new ArrayList<>();
 
         try {
-            Connection con = connect();
+            Connection con = Connect();
             //tengist SQLite gagnagrunninum
             //gerir statement sem tekur allt úr töflunni
             Statement statement = con.createStatement();
