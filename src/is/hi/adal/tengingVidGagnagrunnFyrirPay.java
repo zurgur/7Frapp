@@ -4,15 +4,13 @@ package is.hi.adal;
  * Created by Brynja Palina on 4/11/2017.
  */
 
-import java.sql.*;
-import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 //fuking magic
-public class tengingVidGagnagrunnFyrirUser {
+public class tengingVidGagnagrunnFyrirPay {
 
     public static Connection Connect() {
         try {
@@ -27,16 +25,23 @@ public class tengingVidGagnagrunnFyrirUser {
     }
 
     // adds new user to database
-    public void insertNewUser(String username, String password, String name, String email, String phoneNumber) {
-        String sql = "INSERT INTO User(username, password, name, email, phoneNumber) VALUES(?,?,?,?,?)";
+    public void insertNewBooking(String username, String firstname, String lastname, String gender, String ssn, String nationality, String from, String to, String date, String seat, String flightID) {
+
+        String sql = "INSERT INTO User(username, firstname, lastname, gender, ssn, nationality, from, to, date, seat, fligthID) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
 
         try (Connection conn = this.Connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);
-            pstmt.setString(2, password);
-            pstmt.setString(3, name);
-            pstmt.setString(4, email);
-            pstmt.setString(5, phoneNumber);
+            pstmt.setString(2, firstname);
+            pstmt.setString(3, lastname);
+            pstmt.setString(4, gender);
+            pstmt.setString(5, ssn);
+            pstmt.setString(6, nationality);
+            pstmt.setString(7, from);
+            pstmt.setString(8, to);
+            pstmt.setString(9, date);
+            pstmt.setString(10, seat);
+            pstmt.setString(11, flightID);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
