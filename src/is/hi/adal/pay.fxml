@@ -34,13 +34,14 @@
             <Text layoutX="47.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name" />
             <Text layoutX="47.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Family name" />
             <Text layoutX="48.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
-            <Text layoutX="46.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" />
+            <Text layoutX="46.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social security number" />
             <JFXTextField fx:id="firstName" layoutX="47.0" layoutY="85.0" prefHeight="25.0" prefWidth="180.0" />
             <JFXTextField fx:id="familyName" layoutX="46.0" layoutY="135.0" prefHeight="25.0" prefWidth="180.0" />
             <Text layoutX="46.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nationality" />
             <JFXTextField fx:id="gender" layoutX="46.0" layoutY="186.0" prefHeight="25.0" prefWidth="180.0" />
             <JFXTextField fx:id="birthday" layoutX="46.0" layoutY="234.0" prefHeight="25.0" prefWidth="180.0" />
             <JFXTextField fx:id="nationality" layoutX="46.0" layoutY="283.0" prefHeight="25.0" prefWidth="180.0" />
+            <JFXTextField fx:id="errorMessage" layoutX="359.0" layoutY="238.0" prefHeight="41.0" prefWidth="180.0" unFocusColor="WHITE" />
 
          </children></Pane>
    </children>
