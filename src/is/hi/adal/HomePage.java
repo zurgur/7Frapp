@@ -1,6 +1,9 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,11 +34,13 @@ public class HomePage implements Initializable{
     private JFXButton search;
 
     @FXML
-    private JFXButton myFlights;
+    private JFXListView<String> myFlightList;
+
+    ObservableList<String> list = FXCollections.observableArrayList("Mark", "Tom", "John","Jack");
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        myFlightList.setItems(list);
     }
 
     public void GetUser(String user)

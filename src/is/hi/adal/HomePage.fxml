@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.HomePage">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.HomePage">
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="31.0" prefWidth="600.0" style="-fx-background-color: #48d611;" BorderPane.alignment="CENTER">
          <children>
@@ -17,42 +18,24 @@
       </HBox>
    </top>
    <center>
-      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="441.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="56.0" layoutY="115.0" prefHeight="29.0" prefWidth="79.0" text="From:">
-               <font>
-                  <Font size="18.0" />
-               </font></Label>
-            <Label layoutX="56.0" layoutY="160.0" prefHeight="29.0" prefWidth="79.0" text="To:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="56.0" layoutY="205.0" prefHeight="29.0" prefWidth="79.0" text="Date:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="56.0" layoutY="250.0" prefHeight="29.0" prefWidth="79.0" text="Seat:">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <JFXButton fx:id="search" buttonType="RAISED" layoutX="227.0" layoutY="298.0" mnemonicParsing="false" onAction="#SearchAction" prefHeight="40.0" prefWidth="137.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE">
+            <JFXButton fx:id="search" buttonType="RAISED" layoutX="225.0" layoutY="380.0" mnemonicParsing="false" onAction="#SearchAction" prefHeight="40.0" prefWidth="137.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE">
                <font>
                   <Font size="27.0" />
                </font>
             </JFXButton>
-            <Label layoutX="29.0" layoutY="8.0" prefHeight="59.0" prefWidth="557.0" text="Welcome to Your Home Page">
+            <Label layoutX="29.0" layoutY="22.0" prefHeight="59.0" prefWidth="557.0" text="Welcome to Your Home Page">
                <font>
                   <Font size="41.0" />
                </font>
             </Label>
-            <Label layoutX="56.0" layoutY="68.0" prefHeight="38.0" prefWidth="142.0" text="My Flights">
+            <Label layoutX="56.0" layoutY="89.0" prefHeight="38.0" prefWidth="142.0" text="Your Flights">
                <font>
                   <Font size="26.0" />
                </font>
             </Label>
+            <JFXListView fx:id="myFlightList" disable="true" editable="true" layoutX="46.0" layoutY="146.0" prefHeight="200.0" prefWidth="520.0" />
          </children>
       </Pane>
    </center>
