@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXDialog?>
 <?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
@@ -26,7 +25,6 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <JFXCheckBox fx:id="showPassword" layoutX="148.0" layoutY="193.0" mnemonicParsing="false" text="Show Password" />
             <JFXDialog layoutX="-25.0" layoutY="-19.0" prefHeight="150.0" prefWidth="200.0" />
             <Label fx:id="isConnected" layoutX="14.0" layoutY="6.0" prefHeight="17.0" prefWidth="65.0" text="Status" />
             <JFXTextField fx:id="errorMessage" disable="true" editable="false" layoutX="148.0" layoutY="225.0" prefHeight="25.0" prefWidth="238.0" unFocusColor="WHITE" />

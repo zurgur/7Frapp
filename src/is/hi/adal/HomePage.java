@@ -30,6 +30,9 @@ public class HomePage implements Initializable{
     @FXML
     private JFXButton search;
 
+    @FXML
+    private JFXButton myFlights;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -70,4 +73,6 @@ public class HomePage implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
+
+
 }
