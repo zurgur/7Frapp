@@ -51,7 +51,9 @@ public class FlightsControler implements Initializable{
         //fer í gegnum array listan og set í lista
         for(int i = 0; i<out.size();i++){
             try {
-                Label lbl = new Label(out.get(i).getDestinasion() );
+                Label lbl = new Label("from: " + out.get(i).getFrom()+" to: "+out.get(i).getDestinasion() +
+                        " date: " + out.get(i).getDate() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
+
                 outList.getItems().add(lbl);
             }catch (Exception e){
                 System.out.println("dem");
@@ -61,7 +63,8 @@ public class FlightsControler implements Initializable{
         if (Search.timi2Valin){
             for(int i = 0; i<home.size();i++){
                 try {
-                    Label lbl = new Label(home.get(i).getDestinasion());
+                    Label lbl = new Label("from: " + home.get(i).getFrom()+" to: "+home.get(i).getDestinasion() +
+                    " date: " + home.get(i).getDate() + " cost: " + home.get(i).getCost() + " seats: "+ home.get(i).getSeats());
                     homeList.getItems().add(lbl);
                 }catch (Exception e){
                     System.out.println("dem");
