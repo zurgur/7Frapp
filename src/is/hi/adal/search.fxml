@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane id="hug" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Search">
+<AnchorPane id="hug" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Search">
    <children>
       <JFXTextField id="myDepartur" fx:id="departur" layoutX="213.0" layoutY="67.0" prefHeight="25.0" prefWidth="174.0" promptText="Departure" />
       <JFXTextField fx:id="arrival" layoutX="213.0" layoutY="123.0" prefHeight="25.0" prefWidth="174.0" promptText="Arrival" />
@@ -20,7 +20,7 @@
          </toggleGroup></JFXRadioButton>
       <JFXRadioButton fx:id="morgun" layoutX="136.0" layoutY="288.0" text="morning flight" toggleGroup="$timi" />
       <JFXRadioButton fx:id="kvöld" layoutX="353.0" layoutY="288.0" text="evening flight" toggleGroup="$timi" />
-      <JFXDatePicker fx:id="date2" defaultColor="#48d611" layoutX="215.0" layoutY="231.0" onAction="#setTimi2Action" prefHeight="28.0" prefWidth="174.0" promptText="Arrival Date" />
+      <JFXDatePicker fx:id="date2" defaultColor="#48d611" layoutX="215.0" layoutY="231.0" onAction="#setTimi2Action" prefHeight="28.0" prefWidth="174.0" promptText="Arrival Date (optional)" />
       <JFXDatePicker fx:id="date" defaultColor="#48d611" layoutX="215.0" layoutY="186.0" onAction="#setTimi1Action" prefHeight="28.0" prefWidth="174.0" promptText="Departure Date" />
       <JFXButton fx:id="leita" layoutX="180.0" layoutY="321.0" onAction="#leitaAction" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE" />
       <Pane layoutY="-2.0" prefHeight="35.0" prefWidth="601.0" style="-fx-background-color: #48d611;">

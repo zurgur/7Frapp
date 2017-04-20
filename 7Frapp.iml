@@ -28,13 +28,13 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../sqlite-jdbc-3.16.1.jar!/" />
+          <root url="jar://C:/Users/sqlite-jdbc-3.16.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/jfoenix.jar!/" />
@@ -48,6 +48,15 @@
       <library>
         <CLASSES>
           <root url="jar://$USER_HOME$/Downloads/sqlite-jdbc-3.16.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://$USER_HOME$/Desktop/sqlite-jdbc-3.16.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
