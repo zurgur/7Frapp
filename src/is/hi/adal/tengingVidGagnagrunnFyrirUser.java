@@ -42,4 +42,21 @@ public class tengingVidGagnagrunnFyrirUser {
             System.out.println(e.getMessage());
         }
     }
+
+   /* public <ArrayList> getFlightInfo()
+    {
+        String sql = "SELECT ";
+
+        try (Connection conn = this.Connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pstmt.setString(1, username);
+            pstmt.setString(2, password);
+            pstmt.setString(3, name);
+            pstmt.setString(4, email);
+            pstmt.setString(5, phoneNumber);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }*/
 }

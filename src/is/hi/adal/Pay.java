@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -42,6 +43,9 @@ public class Pay {
     private JFXButton goBack;
     @FXML
     private JFXTextField errorMessage;
+
+    @FXML
+    private JFXButton signOut;
 
     tengingVidGagnagrunnFyrirPay t = new tengingVidGagnagrunnFyrirPay();
 
@@ -111,7 +115,7 @@ public class Pay {
         String country = nationality.getText();
 
 
-        t.insertNewBooking(firstname, lastname, sex, ssn, country);
+        //t.insertNewBooking(firstname, lastname, sex, ssn, country);
     }
 
     public void FlightsAction(ActionEvent actionEvent) throws IOException
@@ -123,6 +127,26 @@ public class Pay {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void SignOut(ActionEvent event)
+    {
+        try
+        {
+            Stage stage;
+            FXMLLoader loader = new FXMLLoader();
+            Pane root = null;
+            root = loader.load(getClass().getResource("start.fxml").openStream());
+            stage = (Stage) signOut.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     public static void main(String[] args) {
