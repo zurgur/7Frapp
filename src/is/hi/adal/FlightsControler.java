@@ -107,17 +107,38 @@ public class FlightsControler implements Initializable{
     }
 
     public void sortPriceAction(ActionEvent actionEvent) {
-        Collections.sort(out, (o1, o2) -> {
-           if(o1.getCost() == o2.getCost()){ return 0;}
-           else if(o1.getCost()> o2.getCost()){return 10;}
-           else return -10;
-        });
-        Collections.sort(home, (o1, o2) -> {
-            if(o1.getCost() == o2.getCost()){ return 0;}
-            else if(o1.getCost()> o2.getCost()){return 10;}
-            else return -10;
-        });
-        setLists();
+        if(sortPrice.isSelected() && !out.isEmpty()){
+            Collections.sort(out, (o1, o2) -> {
+                if(o1.getCost() == o2.getCost()){ return 0;}
+                else if(o1.getCost()> o2.getCost()){return 10;}
+                else return -10;
+            });
+        }
+        if(sortPrice.isSelected() && !home.isEmpty()){
+            Collections.sort(home, (o1, o2) -> {
+                if(o1.getCost() == o2.getCost()){ return 0;}
+                else if(o1.getCost()> o2.getCost()){return 10;}
+                else return -10;
+            });
+            setLists();
+        }
+    }
+    public void sortSeatsAction(ActionEvent actionEvent) {
+        if(sortSeats.isSelected() && !out.isEmpty()){
+            Collections.sort(out, (o1, o2) -> {
+                if(o1.getSeats() == o2.getSeats()){ return 0;}
+                else if(o1.getSeats()> o2.getSeats()){return -10;}
+                else return 10;
+            });
+        }
+        if(sortSeats.isSelected() && !home.isEmpty()){
+            Collections.sort(home, (o1, o2) -> {
+                if(o1.getSeats() == o2.getSeats()){ return 0;}
+                else if(o1.getSeats()> o2.getSeats()){return -10;}
+                else return 10;
+            });
+            setLists();
+        }
     }
     public void setLists(){
         //lætt out og hom hafa rétt gögn :)
@@ -129,11 +150,11 @@ public class FlightsControler implements Initializable{
         for(int i = 0; i<out.size();i++){
             try {
                 Label lbl = new Label("from: " + out.get(i).getFrom()+" to: "+out.get(i).getDestinasion() +
-                        " date: " + out.get(i).getDate() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
+                        " date: " + out.get(i).getDate() + " " + out.get(i).getTime() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
 
                 outList.getItems().add(lbl);
             }catch (Exception e){
-                System.out.println("dem");
+                e.printStackTrace();
             }
         }
         //sama og fyrir ofan nema ég gái hvort það passi við
@@ -141,26 +162,14 @@ public class FlightsControler implements Initializable{
             for(int i = 0; i<home.size();i++){
                 try {
                     Label lbl = new Label("from: " + home.get(i).getFrom()+" to: "+home.get(i).getDestinasion() +
-                            " date: " + home.get(i).getDate() + " cost: " + home.get(i).getCost() + " seats: "+ home.get(i).getSeats());
+                            " date: " + home.get(i).getDate()+ " " + home.get(i).getTime() + " cost: " + home.get(i).getCost() + " seats: "+ home.get(i).getSeats());
                     homeList.getItems().add(lbl);
                 }catch (Exception e){
-                    System.out.println("dem");
+                    e.printStackTrace();
                 }
             }
         }
     }
 
-    public void sortSeatsAction(ActionEvent actionEvent) {
-        Collections.sort(out, (o1, o2) -> {
-            if(o1.getSeats() == o2.getSeats()){ return 0;}
-            else if(o1.getSeats()> o2.getSeats()){return -10;}
-            else return 10;
-        });
-        Collections.sort(home, (o1, o2) -> {
-            if(o1.getSeats() == o2.getSeats()){ return 0;}
-            else if(o1.getSeats()> o2.getSeats()){return -10;}
-            else return 10;
-        });
-        setLists();
-    }
+
 }

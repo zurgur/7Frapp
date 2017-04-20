@@ -9,6 +9,7 @@ public class Flight {
     private String from;
     private int cost;
     private int seats;
+    private String time;
 
     public String getDate() {
         return date;
@@ -49,11 +50,16 @@ public class Flight {
     public void setSeats(int seats) {
         this.seats = seats;
     }
-    public Flight(String dagur, String afangastadur, String fra, int kostnaður, int Seats){
+    public Flight(String dagur, String afangastadur, String fra, int kostnaður, int Seats, String time){
         this.date = dagur;
         this.destinasion = afangastadur;
         this.from = fra;
         this.cost = kostnaður;
         this.seats = Seats;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
     }
 }
