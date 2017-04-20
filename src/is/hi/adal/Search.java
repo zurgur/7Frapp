@@ -123,7 +123,7 @@ public class Search {
         // fer í gegn um arry-ana
         ArrayList<Flight> fraTil = new ArrayList<>();
         for(int i = 0; i<fra.size();i++){
-            String Str = time.get(0).substring(0,2);
+            String Str = time.get(i).substring(0,2);
             int tim = Integer.parseInt(Str);
             if (tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
@@ -141,7 +141,6 @@ public class Search {
                     && (data.get(i)).equals(date) && !morgun.isSelected() && !hadeigi.isSelected() && !kvöld.isSelected()){
                 fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i),time.get(i)));
             }
-            System.out.println(time.get(i));
         }
         return fraTil;
     }

@@ -150,11 +150,11 @@ public class FlightsControler implements Initializable{
         for(int i = 0; i<out.size();i++){
             try {
                 Label lbl = new Label("from: " + out.get(i).getFrom()+" to: "+out.get(i).getDestinasion() +
-                        " date: " + out.get(i).getDate() + " " + home.get(i).getTime() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
+                        " date: " + out.get(i).getDate() + " " + out.get(i).getTime() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
 
                 outList.getItems().add(lbl);
             }catch (Exception e){
-                System.out.println("dem");
+                e.printStackTrace();
             }
         }
         //sama og fyrir ofan nema ég gái hvort það passi við
@@ -165,7 +165,7 @@ public class FlightsControler implements Initializable{
                             " date: " + home.get(i).getDate()+ " " + home.get(i).getTime() + " cost: " + home.get(i).getCost() + " seats: "+ home.get(i).getSeats());
                     homeList.getItems().add(lbl);
                 }catch (Exception e){
-                    System.out.println("dem");
+                    e.printStackTrace();
                 }
             }
         }
