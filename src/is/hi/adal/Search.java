@@ -75,7 +75,6 @@ public class Search {
             stage.initOwner(leita.getScene().getWindow());
             stage.showAndWait();
         }
-
     }
 
     //fall fyrir one way flug :)
@@ -128,20 +127,21 @@ public class Search {
             int tim = Integer.parseInt(Str);
             if (tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i),time.get(i)));
 
             }else if(tim>=10 && tim<=17 && hadeigi.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i),time.get(i)));
 
             }else if(tim>=17 && tim<=23 && kvöld.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i),time.get(i)));
 
             }else if ((fra.get(i)).equalsIgnoreCase(departure)&& (til.get(i)).equalsIgnoreCase(arrival)
-                    && (data.get(i)).equals(date)){
-                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
+                    && (data.get(i)).equals(date) && !morgun.isSelected() && !hadeigi.isSelected() && !kvöld.isSelected()){
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i),time.get(i)));
             }
+            System.out.println(time.get(i));
         }
         return fraTil;
     }
