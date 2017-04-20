@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
-<?import com.jfoenix.controls.JFXSlider?>
 <?import com.jfoenix.controls.JFXToggleButton?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,22 +10,21 @@
 
 <AnchorPane prefHeight="517.0" prefWidth="696.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.FlightsControler">
    <children>
-      <Pane layoutY="-7.0" prefHeight="524.0" prefWidth="696.0">
+      <Pane layoutY="-7.0" prefHeight="529.0" prefWidth="696.0">
          <children>
-            <JFXListView fx:id="outList" layoutX="24.0" layoutY="110.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="247.0" />
-            <JFXListView fx:id="homeList" layoutX="287.0" layoutY="110.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="247.0" />
+            <JFXListView fx:id="outList" layoutX="20.0" layoutY="76.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="514.0" />
+            <JFXListView fx:id="homeList" layoutX="20.0" layoutY="306.0" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="206.0" prefWidth="514.0" />
             <JFXButton fx:id="Continue" layoutX="564.0" layoutY="457.0" onAction="#ContinueAction" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: #48d611;" text="Continue" textFill="WHITE" />
             <JFXButton fx:id="back" layoutX="564.0" layoutY="379.0" onAction="#BackAction" prefHeight="53.0" prefWidth="105.0" style="-fx-background-color: #48d611;" text="Back" textFill="WHITE" />
-            <Text layoutX="24.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival" />
-            <Text layoutX="287.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departur" />
+            <Text layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Arrival" />
+            <Text layoutX="24.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Departur" />
             <Pane layoutY="7.0" prefHeight="34.0" prefWidth="696.0" style="-fx-background-color: #48d611;">
                <children>
                   <JFXButton fx:id="signOut" layoutX="625.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="34.0" prefWidth="64.0" text="Sign out" textFill="WHITE" />
                   <Label fx:id="userLabel" layoutX="548.0" layoutY="9.0" text="Welcome User" textFill="WHITE" />
                </children></Pane>
-            <JFXSlider layoutX="547.0" layoutY="110.0" />
-            <Label layoutX="550.0" layoutY="76.0" prefHeight="17.0" prefWidth="77.0" text="Max Cost" />
-            <JFXToggleButton fx:id="sortPrice" layoutX="546.0" layoutY="131.0" onAction="#sortPriceAction" text="Sort by price" />
+            <JFXToggleButton fx:id="sortPrice" layoutX="549.0" layoutY="76.0" onAction="#sortPriceAction" text="Sort by price" />
+            <JFXToggleButton fx:id="sortSeats" layoutX="549.0" layoutY="132.0" onAction="#sortSeatsAction" text="Sort by seats" />
          </children>
       </Pane>
 

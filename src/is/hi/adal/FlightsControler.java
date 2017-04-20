@@ -37,6 +37,8 @@ public class FlightsControler implements Initializable{
     JFXButton signOut;
     @FXML
     ToggleButton sortPrice;
+    @FXML
+    ToggleButton sortSeats;
     //inizalize array lista
     private ArrayList<Flight> out = new ArrayList<>();
 
@@ -56,9 +58,6 @@ public class FlightsControler implements Initializable{
         setLists();
 
     }
-
-
-
 
     //fall fyrir til bakka takkan og fer til baka á search skjá
     public void BackAction(ActionEvent actionEvent) throws IOException {
@@ -149,5 +148,19 @@ public class FlightsControler implements Initializable{
                 }
             }
         }
+    }
+
+    public void sortSeatsAction(ActionEvent actionEvent) {
+        Collections.sort(out, (o1, o2) -> {
+            if(o1.getSeats() == o2.getSeats()){ return 0;}
+            else if(o1.getSeats()> o2.getSeats()){return -10;}
+            else return 10;
+        });
+        Collections.sort(home, (o1, o2) -> {
+            if(o1.getSeats() == o2.getSeats()){ return 0;}
+            else if(o1.getSeats()> o2.getSeats()){return -10;}
+            else return 10;
+        });
+        setLists();
     }
 }
