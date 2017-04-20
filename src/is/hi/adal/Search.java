@@ -49,12 +49,15 @@ public class Search {
     ArrayList<String> til = t.getTo();
     ArrayList<String> data = t.getDate();
     ArrayList<String> time = t.getTime();
+    ArrayList<Integer> cost = t.getCost();
+    ArrayList<Integer> seats = t.getSeats();
+
     //boolean sem gefa til kyna að dagsetning hefur verið valin
     Boolean timi1Valin = false;
     //geri public því ég nota þessar breytur í lista fallinu (ég veit það er ekki sniðugt)
     public  static Boolean timi2Valin = false;
-    public static ArrayList<String> found1;
-    public static ArrayList<String> found2;
+    public static ArrayList<Flight> found1;
+    public static ArrayList<Flight> found2;
 
     //fall þegar ýtt er á search
     public void leitaAction(ActionEvent actionEvent) throws IOException {
@@ -116,38 +119,38 @@ public class Search {
     }
 
     //fal sem skilar flugum sem passa við gögnin sem eru gefin
-    public ArrayList<String> searchForFlight(String departure, String arrival,String date){
+    public ArrayList<Flight> searchForFlight(String departure, String arrival, String date){
         //prufa verður að hafa try og catch fyrir SQLite tengniguna
         // fer í gegn um arry-ana
-        ArrayList<String> fraTil = new ArrayList<>();
+        ArrayList<Flight> fraTil = new ArrayList<>();
         for(int i = 0; i<fra.size();i++){
             String Str = time.get(0).substring(0,2);
             int tim = Integer.parseInt(Str);
             if (tim<=10 && morgun.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
 
             }else if(tim>=10 && tim<=17 && hadeigi.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
 
             }else if(tim>=17 && tim<=23 && kvöld.isSelected() && (fra.get(i)).equalsIgnoreCase(departure)&&
                     (til.get(i)).equalsIgnoreCase(arrival) && (data.get(i)).equals(date)){
-                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
 
             }else if ((fra.get(i)).equalsIgnoreCase(departure)&& (til.get(i)).equalsIgnoreCase(arrival)
                     && (data.get(i)).equals(date)){
-                fraTil.add(departure +" "+ arrival + " " + data.get(i) + " " + time.get(i));
+                fraTil.add(new Flight(data.get(i),arrival,departure, cost.get(i),seats.get(i)));
             }
         }
         return fraTil;
     }
 
-    public ArrayList<String> getFound1() {
+    public ArrayList<Flight> getFound1() {
         return found1;
     }
 
-    public ArrayList<String> getFound2() {
+    public ArrayList<Flight> getFound2() {
         return found2;
     }
 

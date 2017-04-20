@@ -34,9 +34,9 @@ public class FlightsControler implements Initializable{
     @FXML
     JFXButton signOut;
     //inizalize array lista
-    private ArrayList<String> out = new ArrayList<>();
+    private ArrayList<Flight> out = new ArrayList<>();
 
-    private ArrayList<String> home = new ArrayList<>();
+    private ArrayList<Flight> home = new ArrayList<>();
     private Object outObject;
     private Object homeObject;
     private int outIndex;
@@ -51,7 +51,7 @@ public class FlightsControler implements Initializable{
         //fer í gegnum array listan og set í lista
         for(int i = 0; i<out.size();i++){
             try {
-                Label lbl = new Label(out.get(i)+i);
+                Label lbl = new Label(out.get(i).getDestinasion() );
                 outList.getItems().add(lbl);
             }catch (Exception e){
                 System.out.println("dem");
@@ -61,7 +61,7 @@ public class FlightsControler implements Initializable{
         if (Search.timi2Valin){
             for(int i = 0; i<home.size();i++){
                 try {
-                    Label lbl = new Label(home.get(i));
+                    Label lbl = new Label(home.get(i).getDestinasion());
                     homeList.getItems().add(lbl);
                 }catch (Exception e){
                     System.out.println("dem");
@@ -75,13 +75,7 @@ public class FlightsControler implements Initializable{
     }
 
 
-    public void setOut(ArrayList<String> out) {
-        this.out = out;
-    }
 
-    public void setHome(ArrayList<String> home) {
-        this.home = home;
-    }
 
     //fall fyrir til bakka takkan og fer til baka á search skjá
     public void BackAction(ActionEvent actionEvent) throws IOException {
