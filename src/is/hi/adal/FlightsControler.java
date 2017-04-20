@@ -1,5 +1,6 @@
 package is.hi.adal;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -29,6 +31,8 @@ public class FlightsControler implements Initializable{
     JFXListView homeList;
     @FXML
     Button back;
+    @FXML
+    JFXButton signOut;
     //inizalize array lista
     private ArrayList<String> out = new ArrayList<>();
 
@@ -104,6 +108,26 @@ public class FlightsControler implements Initializable{
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void SignOut(ActionEvent event)
+    {
+        try
+        {
+            Stage stage;
+            FXMLLoader loader = new FXMLLoader();
+            Pane root = null;
+            root = loader.load(getClass().getResource("start.fxml").openStream());
+            stage = (Stage) signOut.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 
     public Object getOutObject() {

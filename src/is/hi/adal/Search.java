@@ -1,5 +1,6 @@
 package is.hi.adal;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -38,6 +40,8 @@ public class Search {
     DatePicker date2;
     @FXML
     Button back;
+    @FXML
+    JFXButton signOut;
     //tengjumst gagnagrunninum sem er sqlite
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
     //gerum Array lista fyrir gögninn í sql-inu
@@ -159,5 +163,25 @@ public class Search {
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    public void SignOut(ActionEvent event)
+    {
+        try
+        {
+            Stage stage;
+            FXMLLoader loader = new FXMLLoader();
+            Pane root = null;
+            root = loader.load(getClass().getResource("start.fxml").openStream());
+            stage = (Stage) signOut.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
     }
 }
