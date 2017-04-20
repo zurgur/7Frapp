@@ -47,8 +47,8 @@
          </children></Pane>
       <Pane layoutX="-13.0" layoutY="-11.0" prefHeight="41.0" prefWidth="613.0" style="-fx-background-color: #48d611;">
          <children>
-            <JFXButton fx:id="signOut" layoutX="546.0" layoutY="11.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="29.0" prefWidth="67.0" text="Sign out" />
-            <Label fx:id="userLabel" layoutX="457.0" layoutY="11.0" prefHeight="29.0" prefWidth="89.0" text="Welcome User" />
+            <JFXButton fx:id="signOut" layoutX="546.0" layoutY="11.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="29.0" prefWidth="67.0" text="Sign out" textFill="WHITE" />
+            <Label fx:id="userLabel" layoutX="457.0" layoutY="11.0" prefHeight="29.0" prefWidth="89.0" text="Welcome User" textFill="WHITE" />
          </children></Pane>
    </children>
 </AnchorPane>
