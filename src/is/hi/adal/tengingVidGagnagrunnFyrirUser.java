@@ -4,13 +4,10 @@ package is.hi.adal;
  * Created by Brynja Palina on 4/11/2017.
  */
 
-import java.sql.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
+
+import java.sql.*;
 
 //fuking magic
 public class tengingVidGagnagrunnFyrirUser {
@@ -73,6 +70,7 @@ public class tengingVidGagnagrunnFyrirUser {
             System.out.println(e.getMessage());
         }
     }
+
 
    /* public <ArrayList> getFlightInfo()
     {

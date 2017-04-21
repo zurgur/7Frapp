@@ -43,8 +43,8 @@ public class FlightsControler implements Initializable{
     private ArrayList<Flight> out = new ArrayList<>();
 
     private ArrayList<Flight> home = new ArrayList<>();
-    public int outIndex;
-    public int homeIndex;
+    public static int outIndex;
+    public static int homeIndex;
 
 
     @Override

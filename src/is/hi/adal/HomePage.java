@@ -2,30 +2,22 @@ package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-
-import java.io.IOException;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.util.ResourceBundle;
-
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-
-import javax.swing.table.TableColumn;
+import java.io.IOException;
+import java.net.URL;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ResourceBundle;
 
 /**
  * Created by Brynja Palina on 4/11/2017.
@@ -40,6 +32,9 @@ public class HomePage implements Initializable{
 
     @FXML
     private JFXButton search;
+    @FXML
+    private JFXListView myList;
+    private tengingVidGagnagrunn con = new tengingVidGagnagrunn();
 
     /*@FXML private TableView<MyFlights> table;
     @FXML private TableColumn to;
@@ -53,7 +48,32 @@ public class HomePage implements Initializable{
 
     */@Override
     public void initialize(URL location, ResourceBundle resources) {
-       // t.getMyFlights(data, table);
+       String user = userLabel.getText();
+        java.sql.Connection tengng = con.connection();
+        String select = "SELECT * FROM UserFlight WHERE username =\"" + user +"\" ";
+
+
+        Statement statement = null;
+        try {
+            statement = tengng.createStatement();
+            String s = "SELECT * " +
+                    "FROM UserFlight"; //+
+
+            //executar og finnur allt í töfnunni
+            statement.execute(s);
+            //hluur sem er með því sem kom út
+            ResultSet rs = statement.getResultSet();
+            //while sem fer í geggn um result göggnin
+            while( rs.next() ) {
+                String name = rs.getString("username");
+                String from = rs.getString("from");
+                System.out.println(name + from);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     public void GetUser(String user)

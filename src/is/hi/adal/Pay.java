@@ -9,13 +9,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import static javafx.application.Application.launch;
@@ -161,11 +159,11 @@ public class Pay implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        ArrayList<Flight> out = Search.found1;
+        //í vinnslu
+        /*ArrayList<Flight> out = Search.found1;
         ArrayList<Flight> home = Search.found2;
-        FlightsControler fl = new FlightsControler();
-        int iu =  fl.outIndex;
-        int ih = fl.homeIndex;
+        int iu =  FlightsControler.outIndex;
+        int ih = FlightsControler.homeIndex;
         System.out.println(iu);
         Label lbl = new Label("from: " + out.get(iu).getFrom()+" to: "+out.get(iu).getDestinasion() +
                 " date: " + out.get(iu).getDate() + " " + out.get(iu).getTime() + " cost: " + out.get(iu).getCost() + " seats: "+ out.get(iu).getSeats());
@@ -174,6 +172,6 @@ public class Pay implements Initializable{
 
         lbl = new Label("from: " + home.get(ih).getFrom()+" to: "+home.get(ih).getDestinasion() +
                 " date: " + home.get(ih).getDate()+ " " + home.get(ih).getTime() + " cost: " + home.get(ih).getCost() + " seats: "+ home.get(ih).getSeats());
-        thuertadkaupa.getItems().add(lbl);
+        thuertadkaupa.getItems().add(lbl);*/
     }
 }
