@@ -10,12 +10,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 /**
@@ -33,10 +35,14 @@ public class FlightsControler implements Initializable{
     Button back;
     @FXML
     JFXButton signOut;
+    @FXML
+    ToggleButton sortPrice;
+    @FXML
+    ToggleButton sortSeats;
     //inizalize array lista
-    private ArrayList<String> out = new ArrayList<>();
+    private ArrayList<Flight> out = new ArrayList<>();
 
-    private ArrayList<String> home = new ArrayList<>();
+    private ArrayList<Flight> home = new ArrayList<>();
     private Object outObject;
     private Object homeObject;
     private int outIndex;
@@ -45,42 +51,12 @@ public class FlightsControler implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        //lætt out og hom hafa rétt gögn :)
-        out = Search.found1;
-        home = Search.found2;
-        //fer í gegnum array listan og set í lista
-        for(int i = 0; i<out.size();i++){
-            try {
-                Label lbl = new Label(out.get(i)+i);
-                outList.getItems().add(lbl);
-            }catch (Exception e){
-                System.out.println("dem");
-            }
-        }
-        //sama og fyrir ofan nema ég gái hvort það passi við
-        if (Search.timi2Valin){
-            for(int i = 0; i<home.size();i++){
-                try {
-                    Label lbl = new Label(home.get(i));
-                    homeList.getItems().add(lbl);
-                }catch (Exception e){
-                    System.out.println("dem");
-                }
-            }
-        }
         // læt listana vilja stæka :)
         homeList.setExpanded(Boolean.TRUE);
         outList.setExpanded(Boolean.TRUE);
+        //set inn á listana
+        setLists();
 
-    }
-
-
-    public void setOut(ArrayList<String> out) {
-        this.out = out;
-    }
-
-    public void setHome(ArrayList<String> home) {
-        this.home = home;
     }
 
     //fall fyrir til bakka takkan og fer til baka á search skjá
@@ -130,19 +106,70 @@ public class FlightsControler implements Initializable{
 
     }
 
-    public Object getOutObject() {
-        return outObject;
+    public void sortPriceAction(ActionEvent actionEvent) {
+        if(sortPrice.isSelected() && !out.isEmpty()){
+            Collections.sort(out, (o1, o2) -> {
+                if(o1.getCost() == o2.getCost()){ return 0;}
+                else if(o1.getCost()> o2.getCost()){return 10;}
+                else return -10;
+            });
+        }
+        if(sortPrice.isSelected() && !home.isEmpty()){
+            Collections.sort(home, (o1, o2) -> {
+                if(o1.getCost() == o2.getCost()){ return 0;}
+                else if(o1.getCost()> o2.getCost()){return 10;}
+                else return -10;
+            });
+            setLists();
+        }
+    }
+    public void sortSeatsAction(ActionEvent actionEvent) {
+        if(sortSeats.isSelected() && !out.isEmpty()){
+            Collections.sort(out, (o1, o2) -> {
+                if(o1.getSeats() == o2.getSeats()){ return 0;}
+                else if(o1.getSeats()> o2.getSeats()){return -10;}
+                else return 10;
+            });
+        }
+        if(sortSeats.isSelected() && !home.isEmpty()){
+            Collections.sort(home, (o1, o2) -> {
+                if(o1.getSeats() == o2.getSeats()){ return 0;}
+                else if(o1.getSeats()> o2.getSeats()){return -10;}
+                else return 10;
+            });
+            setLists();
+        }
+    }
+    public void setLists(){
+        //lætt out og hom hafa rétt gögn :)
+        out = Search.found1;
+        home = Search.found2;
+        outList.getItems().clear();
+        homeList.getItems().clear();
+        //fer í gegnum array listan og set í lista
+        for(int i = 0; i<out.size();i++){
+            try {
+                Label lbl = new Label("from: " + out.get(i).getFrom()+" to: "+out.get(i).getDestinasion() +
+                        " date: " + out.get(i).getDate() + " " + out.get(i).getTime() + " cost: " + out.get(i).getCost() + " seats: "+ out.get(i).getSeats());
+
+                outList.getItems().add(lbl);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        //sama og fyrir ofan nema ég gái hvort það passi við
+        if (Search.timi2Valin){
+            for(int i = 0; i<home.size();i++){
+                try {
+                    Label lbl = new Label("from: " + home.get(i).getFrom()+" to: "+home.get(i).getDestinasion() +
+                            " date: " + home.get(i).getDate()+ " " + home.get(i).getTime() + " cost: " + home.get(i).getCost() + " seats: "+ home.get(i).getSeats());
+                    homeList.getItems().add(lbl);
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 
-    public Object getHomeObject() {
-        return homeObject;
-    }
 
-    public int getOutIndex() {
-        return outIndex;
-    }
-
-    public int getHomeIndex() {
-        return homeIndex;
-    }
 }
