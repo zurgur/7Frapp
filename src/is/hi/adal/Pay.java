@@ -1,25 +1,29 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import static javafx.application.Application.launch;
 
 /**
  * Created by Sunna on 14.4.2017.
  */
-public class Pay {
+public class Pay implements Initializable{
 
     @FXML
     private JFXButton pay;
@@ -43,9 +47,10 @@ public class Pay {
     private JFXButton goBack;
     @FXML
     private JFXTextField errorMessage;
-
     @FXML
     private JFXButton signOut;
+    @FXML
+    private JFXListView thuertadkaupa;
 
     tengingVidGagnagrunnFyrirPay t = new tengingVidGagnagrunnFyrirPay();
 
@@ -154,6 +159,21 @@ public class Pay {
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        ArrayList<Flight> out = Search.found1;
+        ArrayList<Flight> home = Search.found2;
+        FlightsControler fl = new FlightsControler();
+        int iu =  fl.outIndex;
+        int ih = fl.homeIndex;
+        System.out.println(iu);
+        Label lbl = new Label("from: " + out.get(iu).getFrom()+" to: "+out.get(iu).getDestinasion() +
+                " date: " + out.get(iu).getDate() + " " + out.get(iu).getTime() + " cost: " + out.get(iu).getCost() + " seats: "+ out.get(iu).getSeats());
 
+        thuertadkaupa.getItems().add(lbl);
 
+        lbl = new Label("from: " + home.get(ih).getFrom()+" to: "+home.get(ih).getDestinasion() +
+                " date: " + home.get(ih).getDate()+ " " + home.get(ih).getTime() + " cost: " + home.get(ih).getCost() + " seats: "+ home.get(ih).getSeats());
+        thuertadkaupa.getItems().add(lbl);
+    }
 }
