@@ -67,7 +67,11 @@ public class HomePage implements Initializable{
             while( rs.next() ) {
                 String name = rs.getString("username");
                 String from = rs.getString("from");
-                System.out.println(name + from);
+                String to= rs.getString("to");
+                String date = rs.getString("date");
+                String seat = rs.getString("seat");
+                Label ls = new Label(name + "                " + from + "                " + to + "                " + date + "                " + seat);
+                myList.getItems().add(ls);
             }
         } catch (SQLException e) {
             e.printStackTrace();
