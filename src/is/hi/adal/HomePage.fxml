@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
@@ -8,7 +13,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.HomePage">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="482.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.HomePage">
    <top>
       <HBox alignment="TOP_RIGHT" prefHeight="31.0" prefWidth="600.0" style="-fx-background-color: #48d611;" BorderPane.alignment="CENTER">
          <children>
@@ -35,7 +40,14 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <JFXListView fx:id="myList" layoutX="69.0" layoutY="134.0" prefHeight="223.0" prefWidth="478.0" />
+            <TableView fx:id="myTable" layoutX="119.0" layoutY="151.0" prefHeight="200.0" prefWidth="349.0">
+              <columns>
+                <TableColumn fx:id="fra" prefWidth="85.0" text="From" />
+                <TableColumn fx:id="til" prefWidth="87.0" text="To" />
+                  <TableColumn fx:id="dagur" prefWidth="82.0" text="Date" />
+                  <TableColumn fx:id="saeti" prefWidth="93.0" text="Seat" />
+              </columns>
+            </TableView>
          </children>
       </Pane>
    </center>
