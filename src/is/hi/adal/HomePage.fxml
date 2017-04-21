@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXListView?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -35,7 +36,14 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <JFXListView fx:id="myFlightList" disable="true" editable="true" layoutX="46.0" layoutY="146.0" prefHeight="200.0" prefWidth="520.0" />
+            <TableView fx:id="table" layoutX="56.0" layoutY="126.0" prefHeight="235.0" prefWidth="517.0">
+              <columns>
+                <TableColumn fx:id="to" prefWidth="75.0" text="To" />
+                <TableColumn fx:id="from" prefWidth="75.0" text="From" />
+                  <TableColumn fx:id="date" prefWidth="75.0" text="Date" />
+                  <TableColumn fx:id="seat" prefWidth="75.0" text="Seat" />
+              </columns>
+            </TableView>
          </children>
       </Pane>
    </center>

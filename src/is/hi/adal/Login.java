@@ -172,5 +172,12 @@ public class Login implements Initializable{
         stage.show();
     }
 
+    public String getUser()
+    {
+        String users;
+        users = user.getText();
+        return users;
+    }
+
 
 }

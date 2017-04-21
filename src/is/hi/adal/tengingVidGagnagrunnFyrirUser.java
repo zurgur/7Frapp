@@ -5,11 +5,12 @@ package is.hi.adal;
  */
 
 import java.sql.*;
-import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
 
 //fuking magic
 public class tengingVidGagnagrunnFyrirUser {
@@ -38,6 +39,36 @@ public class tengingVidGagnagrunnFyrirUser {
             pstmt.setString(4, email);
             pstmt.setString(5, phoneNumber);
             pstmt.executeUpdate();
+            pstmt.close();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public void getMyFlights(ObservableList<MyFlights> data, TableView<MyFlights> table)
+    {
+        String sql = "SELECT * FROM Booking";
+
+        try {
+            Connection conn = this.Connect();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            Statement statement = conn.createStatement();
+            statement.execute(sql);
+            ResultSet rs;
+            rs = pstmt.executeQuery();
+
+            while(rs.next())
+            {
+                data.add(new MyFlights(
+                        rs.getString("to"),
+                        rs.getString("from"),
+                        rs.getString("date"),
+                        rs.getString("seat")
+                ));
+                table.setItems(data);
+            }
+            pstmt.close();
+            rs.close();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }

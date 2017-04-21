@@ -11,13 +11,21 @@ import javafx.fxml.Initializable;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import javax.swing.table.TableColumn;
 
 /**
  * Created by Brynja Palina on 4/11/2017.
@@ -33,14 +41,19 @@ public class HomePage implements Initializable{
     @FXML
     private JFXButton search;
 
-    @FXML
-    private JFXListView<String> myFlightList;
+    /*@FXML private TableView<MyFlights> table;
+    @FXML private TableColumn to;
+    @FXML private TableColumn from;
+    @FXML private TableColumn date;
+    @FXML private TableColumn seat;
 
-    ObservableList<String> list = FXCollections.observableArrayList("Mark", "Tom", "John","Jack");
+    public ObservableList <MyFlights> data = FXCollections.observableArrayList();
 
-    @Override
+    tengingVidGagnagrunnFyrirUser t = new tengingVidGagnagrunnFyrirUser();
+
+    */@Override
     public void initialize(URL location, ResourceBundle resources) {
-        myFlightList.setItems(list);
+       // t.getMyFlights(data, table);
     }
 
     public void GetUser(String user)
@@ -78,6 +91,5 @@ public class HomePage implements Initializable{
         stage.setScene(scene);
         stage.show();
     }
-
 
 }
