@@ -1,8 +1,6 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -50,6 +47,10 @@ public class HomePage implements Initializable{
     private TableColumn<UserFlight, String> dagur;
     @FXML
     private TableColumn<UserFlight, String> saeti;
+    @FXML
+    private TableColumn<UserFlight, String> lastName;
+    @FXML
+    private TableColumn<UserFlight, String> firstName;
 
     private tengingVidGagnagrunn con = new tengingVidGagnagrunn();
 
@@ -74,7 +75,7 @@ public class HomePage implements Initializable{
         try {
             statement = tengng.createStatement();
             String s = "SELECT * " +
-                    "FROM UserFlight"; //+
+                    "FROM Booking"; //+
 
             //executar og finnur allt í töfnunni
             statement.execute(s);
@@ -88,13 +89,17 @@ public class HomePage implements Initializable{
                 String to= rs.getString("to");
                 String date = rs.getString("date");
                 String seat = rs.getString("seat");
-                stuff.add(new UserFlight(from,to,date,seat));
+                String fn = rs.getString("firstname");
+                String ln = rs.getString("lastname");
+                stuff.add(new UserFlight(from,to,date,seat,fn,ln));
             }
             ObservableList<UserFlight> list = FXCollections.observableArrayList(stuff);
             fra.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("from"));
             til.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("to"));
             dagur.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("date"));
             saeti.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("seat"));
+            firstName.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("fname"));
+            lastName.setCellValueFactory(new PropertyValueFactory<>("lname"));
             myTable.setItems(list);
         } catch (SQLException e) {
             e.printStackTrace();
