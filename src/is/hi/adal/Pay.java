@@ -127,7 +127,7 @@ public class Pay implements Initializable{
 
         // er að fara viltaust í töfluna, þarf að setja uster fyrst og svo þetta dót og svo flugin eftir það
         //  ER BARA COMMENTAÐ ÚT ÞVÍ ANNARS RNNAR VERKEFNIÐ EKKI
-        
+
        // t.insertNewBooking(firstname, lastname, sex, ssn, country);
     }
 
