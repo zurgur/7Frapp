@@ -81,8 +81,11 @@ public class Pay implements Initializable{
         String sex = gender.getText();
         String ssn = birthday.getText();
         String country = nationality.getText();
+        String name = cardholder.getText();
+        String numbers = cardNumber.getText();
+        String backcard = cvc.getText();
 
-        String [] newAccount = {firstname, lastname, sex, ssn, country};
+        String [] newAccount = {firstname, lastname, sex, ssn, country, name, numbers, backcard};
         int count = 0;
         int caseR = 0;
         for(int i=0; i<newAccount.length; i++)
