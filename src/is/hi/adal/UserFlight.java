@@ -10,11 +10,15 @@ public class UserFlight extends RecursiveTreeObject<UserFlight> {
     private String to;
     private String date;
     private String seat;
-    UserFlight(String f, String t, String d, String seat){
+    private String fname;
+    private String lname;
+    UserFlight(String f, String t, String d, String seat, String fn, String ln){
         this.from = f;
         this.to = t;
         this.date = d;
         this.seat = seat;
+        this.fname = fn;
+        this.lname = ln;
     }
 
     public String getSeat() {
@@ -47,5 +51,21 @@ public class UserFlight extends RecursiveTreeObject<UserFlight> {
 
     public void setFrom(String from) {
         this.from = from;
+    }
+
+    public String getFname() {
+        return fname;
+    }
+
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 }
