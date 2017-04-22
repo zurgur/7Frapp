@@ -10,41 +10,50 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Pay">
+<AnchorPane prefHeight="620.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Pay">
    <children>
-      <Pane layoutX="16.0" layoutY="14.0" prefHeight="478.0" prefWidth="584.0">
+      <Pane layoutX="16.0" layoutY="14.0" prefHeight="595.0" prefWidth="574.0">
          <children>
-            <JFXButton fx:id="goBack" buttonType="RAISED" layoutX="192.0" layoutY="423.0" mnemonicParsing="false" onAction="#FlightsAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
-            <JFXButton fx:id="pay" buttonType="RAISED" layoutX="299.0" layoutY="423.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Pay" textFill="WHITE" />
-            <Text layoutX="359.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYMENT" wrappingWidth="168.1015625">
+            <JFXButton fx:id="goBack" buttonType="RAISED" layoutX="192.0" layoutY="529.0" mnemonicParsing="false" onAction="#FlightsAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Go back" textFill="WHITE" />
+            <JFXButton fx:id="pay" buttonType="RAISED" layoutX="299.0" layoutY="528.0" mnemonicParsing="false" onAction="#LoginAction" prefHeight="41.0" prefWidth="89.0" ripplerFill="WHITE" style="-fx-background-color: #48d611;" text="Pay" textFill="WHITE" />
+            <Text layoutX="359.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PAYMENT" wrappingWidth="168.1015625">
                <font>
-                  <Font size="22.0" />
+                  <Font size="20.0" />
                </font></Text>
-            <JFXTextField fx:id="cardholder" focusColor="#09b4ba" layoutX="363.0" layoutY="178.0" prefHeight="29.0" prefWidth="180.0" unFocusColor="#030303" />
+            <JFXTextField fx:id="cardholder" focusColor="#09b4ba" layoutX="363.0" layoutY="272.0" prefHeight="29.0" prefWidth="180.0" unFocusColor="#030303" />
             <NumberValidator blendMode="GREEN" disable="true" layoutX="344.0" layoutY="308.0" scaleX="15.0" scaleY="15.0" scaleZ="15.0" />
-            <Text layoutX="363.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" wrappingWidth="109.10156965255737" />
-            <Text layoutX="363.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cardholder" wrappingWidth="249.13671875" />
-            <JFXTextField fx:id="cardNumber" layoutX="363.0" layoutY="231.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text layoutX="48.0" layoutY="146.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSENGER INFORMATION">
+            <Text layoutX="363.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card number" wrappingWidth="109.10156965255737" />
+            <Text layoutX="363.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cardholder" wrappingWidth="249.13671875" />
+            <JFXTextField fx:id="cardNumber" layoutX="363.0" layoutY="328.0" prefHeight="25.0" prefWidth="180.0" />
+            <Text layoutX="48.0" layoutY="246.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PASSENGER INFORMATION">
                <font>
-                  <Font size="22.0" />
+                  <Font size="20.0" />
                </font>
             </Text>
-            <Text layoutX="363.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-            <Text layoutX="363.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
-            <JFXTextField fx:id="cvc" layoutX="364.0" layoutY="284.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text layoutX="51.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name" />
-            <Text layoutX="51.0" layoutY="227.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Family name" />
-            <Text layoutX="52.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
-            <Text layoutX="50.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social security number" />
-            <JFXTextField fx:id="firstName" layoutX="51.0" layoutY="182.0" prefHeight="25.0" prefWidth="180.0" />
-            <JFXTextField fx:id="familyName" layoutX="50.0" layoutY="232.0" prefHeight="25.0" prefWidth="180.0" />
-            <Text layoutX="50.0" layoutY="376.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nationality" />
-            <JFXTextField fx:id="gender" layoutX="50.0" layoutY="283.0" prefHeight="25.0" prefWidth="180.0" />
-            <JFXTextField fx:id="birthday" layoutX="50.0" layoutY="331.0" prefHeight="25.0" prefWidth="180.0" />
-            <JFXTextField fx:id="nationality" layoutX="50.0" layoutY="380.0" prefHeight="25.0" prefWidth="180.0" />
-            <JFXTextField fx:id="errorMessage" layoutX="363.0" layoutY="335.0" prefHeight="41.0" prefWidth="180.0" unFocusColor="WHITE" />
-            <JFXListView fx:id="thuertadkaupa" layoutX="48.0" layoutY="16.0" prefHeight="103.0" prefWidth="495.0" />
+            <Text layoutX="363.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CVC" />
+            <JFXTextField fx:id="cvc" layoutX="364.0" layoutY="381.0" prefHeight="25.0" prefWidth="180.0" />
+            <Text layoutX="51.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First name" />
+            <Text layoutX="51.0" layoutY="322.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Family name" />
+            <Text layoutX="52.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gender" />
+            <Text layoutX="50.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Social security number" />
+            <JFXTextField fx:id="firstName" layoutX="51.0" layoutY="280.0" prefHeight="25.0" prefWidth="180.0" />
+            <JFXTextField fx:id="familyName" layoutX="50.0" layoutY="331.0" prefHeight="25.0" prefWidth="180.0" />
+            <Text layoutX="50.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nationality" />
+            <JFXTextField fx:id="gender" layoutX="50.0" layoutY="382.0" prefHeight="25.0" prefWidth="180.0" />
+            <JFXTextField fx:id="birthday" layoutX="50.0" layoutY="431.0" prefHeight="25.0" prefWidth="180.0" />
+            <JFXTextField fx:id="nationality" layoutX="50.0" layoutY="481.0" prefHeight="25.0" prefWidth="180.0" />
+            <JFXTextField fx:id="errorMessage" layoutX="363.0" layoutY="442.0" prefHeight="41.0" prefWidth="180.0" unFocusColor="WHITE" />
+            <JFXListView fx:id="thuertadkaupa" layoutX="48.0" layoutY="50.0" prefHeight="103.0" prefWidth="495.0" />
+            <Text layoutX="48.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The flight you picked">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
+            <Text layoutX="75.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please fill out the information below" wrappingWidth="486.4208984375">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Text>
 
          </children></Pane>
       <Pane layoutX="-13.0" layoutY="-11.0" prefHeight="41.0" prefWidth="613.0" style="-fx-background-color: #48d611;">
