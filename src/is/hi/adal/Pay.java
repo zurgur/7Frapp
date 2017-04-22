@@ -123,9 +123,12 @@ public class Pay implements Initializable{
         String sex = gender.getText();
         String ssn = birthday.getText();
         String country = nationality.getText();
+        // vantar að kalla á flugin sem valin voru
 
-
-        //t.insertNewBooking(firstname, lastname, sex, ssn, country);
+        // er að fara viltaust í töfluna, þarf að setja uster fyrst og svo þetta dót og svo flugin eftir það
+        //  ER BARA COMMENTAÐ ÚT ÞVÍ ANNARS RNNAR VERKEFNIÐ EKKI
+        
+       // t.insertNewBooking(firstname, lastname, sex, ssn, country);
     }
 
     public void FlightsAction(ActionEvent actionEvent) throws IOException
