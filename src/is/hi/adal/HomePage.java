@@ -1,8 +1,6 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTreeTableColumn;
-import com.jfoenix.controls.JFXTreeTableView;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -15,7 +13,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TreeItemPropertyValueFactory;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -74,7 +71,7 @@ public class HomePage implements Initializable{
         try {
             statement = tengng.createStatement();
             String s = "SELECT * " +
-                    "FROM UserFlight"; //+
+                    "FROM Booking"; //+
 
             //executar og finnur allt í töfnunni
             statement.execute(s);
