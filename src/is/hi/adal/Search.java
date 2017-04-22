@@ -171,6 +171,7 @@ public class Search implements Initializable{
 
     public void SignOut(ActionEvent event)
     {
+        Login.username = null;
         try
         {
             Stage stage;

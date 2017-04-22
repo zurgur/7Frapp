@@ -141,6 +141,7 @@ public class Pay implements Initializable{
 
     public void SignOut(ActionEvent event)
     {
+        Login.username = null;
         try
         {
             Stage stage;

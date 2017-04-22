@@ -89,6 +89,7 @@ public class FlightsControler implements Initializable{
 
     public void SignOut(ActionEvent event)
     {
+        Login.username = null;
         try
         {
             Stage stage;
