@@ -68,14 +68,14 @@ public class Pay implements Initializable{
                 insertPayingInfo();
             } catch (SQLException e) {
                 e.printStackTrace();
-            }/*
+            }
             Parent root;
             Stage stage;
             stage = (Stage) pay.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("finish.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();*/
+            stage.show();
         //}
         //else if(paying == 0)
         //{
