@@ -15,6 +15,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
@@ -55,25 +58,30 @@ public class Pay implements Initializable{
     private Label userName;
 
     tengingVidGagnagrunnFyrirPay t = new tengingVidGagnagrunnFyrirPay();
+    Connection con = t.Connect();
 
     public void LoginAction(ActionEvent actionEvent) throws IOException {
-        int paying = paydo();
-        if(paying == 1)
-        {
-            insertPayingInfo();
+        //int paying = paydo();
+        //if(paying == 1)
+        //{
+            try {
+                insertPayingInfo();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }/*
             Parent root;
             Stage stage;
             stage = (Stage) pay.getScene().getWindow();
             root = FXMLLoader.load(getClass().getResource("finish.fxml"));
             Scene scene = new Scene(root);
             stage.setScene(scene);
-            stage.show();
-        }
-        else if(paying == 0)
-        {
-            System.out.println("vantar");
-            errorMessage.setText("Please fill in all your information");
-        }
+            stage.show();*/
+        //}
+        //else if(paying == 0)
+        //{
+          //  System.out.println("vantar");
+            //errorMessage.setText("Please fill in all your information");
+        //}
     }
 
     public int paydo()
@@ -115,8 +123,7 @@ public class Pay implements Initializable{
         return caseR;
     }
 
-    public void insertPayingInfo()
-    {
+    public void insertPayingInfo() throws SQLException {
         //user gera if lykkju
         String firstname = firstName.getText();
         String lastname = lastName.getText();
@@ -124,11 +131,26 @@ public class Pay implements Initializable{
         String ssn = birthday.getText();
         String country = nationality.getText();
         // vantar að kalla á flugin sem valin voru
-
+        Flight from = Search.found1.get(FlightsControler.outIndex);
+        Flight to = Search.found2.get(FlightsControler.homeIndex);
         // er að fara viltaust í töfluna, þarf að setja uster fyrst og svo þetta dót og svo flugin eftir það
         //  ER BARA COMMENTAÐ ÚT ÞVÍ ANNARS RNNAR VERKEFNIÐ EKKI
 
        // t.insertNewBooking(firstname, lastname, sex, ssn, country);
+
+        String t1 = "INSERT INTO Booking " +
+                "VALUES ( '" + userName.getText() +"','"+firstname+"','"+lastname+"','"+sex+"','"+ssn+"','"+country+"'," +
+                "'"+from.getFrom()+"','"+from.getDestinasion()+"','"+from.getDate()+"');";
+        Statement statement = con.createStatement();
+        statement.execute(t1);
+        /*
+        String t2 = "INSERT INTO \"main\".\"Booking\" (\"username\",\"firstname\",\"lastname\",\"gender\",\"ssn\"," +
+                "\" nationality\",\"from\",\"to\",\"date\",\"seat\",\"flightID\") " +
+                " VALUES (" +userName.getText() +","+firstname+","+lastname+","+sex+","+ssn+","+country+"," +
+                ""+to.getFrom()+","+to.getDestinasion()+","+to.getDate()+","+"22F"+","+"ssdf"+")";
+        statement = con.createStatement();
+        statement.execute(t2);*/
+
     }
 
     public void FlightsAction(ActionEvent actionEvent) throws IOException
