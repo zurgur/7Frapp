@@ -43,10 +43,8 @@ public class FlightsControler implements Initializable{
     private ArrayList<Flight> out = new ArrayList<>();
 
     private ArrayList<Flight> home = new ArrayList<>();
-    private Object outObject;
-    private Object homeObject;
-    private int outIndex;
-    private int homeIndex;
+    public static int outIndex;
+    public static int homeIndex;
 
 
     @Override
@@ -71,8 +69,6 @@ public class FlightsControler implements Initializable{
     }
     //yfir í pay :)
     public void ContinueAction(ActionEvent actionEvent) throws IOException {
-        outObject = outList.getSelectionModel().getSelectedItem();
-        homeObject = homeList.getSelectionModel().getSelectedItem();
         outIndex = outList.getSelectionModel().getSelectedIndex();
         homeIndex = homeList.getSelectionModel().getSelectedIndex();
         //yfir í pay
@@ -172,4 +168,11 @@ public class FlightsControler implements Initializable{
     }
 
 
+    public int getOutIndex() {
+        return outIndex;
+    }
+
+    public int getHomeIndex() {
+        return homeIndex;
+    }
 }

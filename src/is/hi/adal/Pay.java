@@ -1,24 +1,27 @@
 package is.hi.adal;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import static javafx.application.Application.launch;
 
 /**
  * Created by Sunna on 14.4.2017.
  */
-public class Pay {
+public class Pay implements Initializable{
 
     @FXML
     private JFXButton pay;
@@ -42,6 +45,10 @@ public class Pay {
     private JFXButton goBack;
     @FXML
     private JFXTextField errorMessage;
+    @FXML
+    private JFXButton signOut;
+    @FXML
+    private JFXListView thuertadkaupa;
 
     tengingVidGagnagrunnFyrirPay t = new tengingVidGagnagrunnFyrirPay();
 
@@ -111,7 +118,7 @@ public class Pay {
         String country = nationality.getText();
 
 
-       // t.insertNewBooking(firstname, lastname, sex, ssn, country);
+        //t.insertNewBooking(firstname, lastname, sex, ssn, country);
     }
 
     public void FlightsAction(ActionEvent actionEvent) throws IOException
@@ -125,11 +132,46 @@ public class Pay {
         stage.show();
     }
 
+    public void SignOut(ActionEvent event)
+    {
+        try
+        {
+            Stage stage;
+            FXMLLoader loader = new FXMLLoader();
+            Pane root = null;
+            root = loader.load(getClass().getResource("start.fxml").openStream());
+            stage = (Stage) signOut.getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String[] args) {
         launch(args);
     }
 
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        //í vinnslu
+        /*ArrayList<Flight> out = Search.found1;
+        ArrayList<Flight> home = Search.found2;
+        int iu =  FlightsControler.outIndex;
+        int ih = FlightsControler.homeIndex;
+        System.out.println(iu);
+        Label lbl = new Label("from: " + out.get(iu).getFrom()+" to: "+out.get(iu).getDestinasion() +
+                " date: " + out.get(iu).getDate() + " " + out.get(iu).getTime() + " cost: " + out.get(iu).getCost() + " seats: "+ out.get(iu).getSeats());
 
+        thuertadkaupa.getItems().add(lbl);
 
+        lbl = new Label("from: " + home.get(ih).getFrom()+" to: "+home.get(ih).getDestinasion() +
+                " date: " + home.get(ih).getDate()+ " " + home.get(ih).getTime() + " cost: " + home.get(ih).getCost() + " seats: "+ home.get(ih).getSeats());
+        thuertadkaupa.getItems().add(lbl);*/
+    }
 }
