@@ -40,8 +40,6 @@ public class tengingVidGagnagrunnFyrirPay {
             pstmt.setString(7, from);
             pstmt.setString(8, to);
             pstmt.setString(9, date);
-            pstmt.setString(10, seat);
-            pstmt.setString(11, flightID);
             pstmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
