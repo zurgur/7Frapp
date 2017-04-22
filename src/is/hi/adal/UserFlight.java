@@ -9,24 +9,14 @@ public class UserFlight extends RecursiveTreeObject<UserFlight> {
     private String from;
     private String to;
     private String date;
-    private String seat;
     private String fname;
     private String lname;
-    UserFlight(String f, String t, String d, String seat, String fn, String ln){
+    UserFlight(String f, String t, String d, String fn, String ln){
         this.from = f;
         this.to = t;
         this.date = d;
-        this.seat = seat;
         this.fname = fn;
         this.lname = ln;
-    }
-
-    public String getSeat() {
-        return seat;
-    }
-
-    public void setSeat(String seat) {
-        this.seat = seat;
     }
 
     public String getDate() {

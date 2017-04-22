@@ -88,16 +88,14 @@ public class HomePage implements Initializable{
                 String from = rs.getString("from");
                 String to= rs.getString("to");
                 String date = rs.getString("date");
-                String seat = rs.getString("seat");
                 String fn = rs.getString("firstname");
                 String ln = rs.getString("lastname");
-                stuff.add(new UserFlight(from,to,date,seat,fn,ln));
+                stuff.add(new UserFlight(from,to,date,fn,ln));
             }
             ObservableList<UserFlight> list = FXCollections.observableArrayList(stuff);
             fra.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("from"));
             til.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("to"));
             dagur.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("date"));
-            saeti.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("seat"));
             firstName.setCellValueFactory(new PropertyValueFactory<UserFlight,String>("fname"));
             lastName.setCellValueFactory(new PropertyValueFactory<>("lname"));
             myTable.setItems(list);

@@ -143,13 +143,12 @@ public class Pay implements Initializable{
                 "'"+from.getFrom()+"','"+from.getDestinasion()+"','"+from.getDate()+"');";
         Statement statement = con.createStatement();
         statement.execute(t1);
-        /*
-        String t2 = "INSERT INTO \"main\".\"Booking\" (\"username\",\"firstname\",\"lastname\",\"gender\",\"ssn\"," +
-                "\" nationality\",\"from\",\"to\",\"date\",\"seat\",\"flightID\") " +
-                " VALUES (" +userName.getText() +","+firstname+","+lastname+","+sex+","+ssn+","+country+"," +
-                ""+to.getFrom()+","+to.getDestinasion()+","+to.getDate()+","+"22F"+","+"ssdf"+")";
+
+        String t2 = "INSERT INTO Booking" +
+                " VALUES ('" + userName.getText() +"','"+firstname+"','"+lastname+"','"+sex+"','"+ssn+"','"+country+"'," +
+                "'"+to.getFrom()+"','"+to.getDestinasion()+"','"+to.getDate()+"');";
         statement = con.createStatement();
-        statement.execute(t2);*/
+        statement.execute(t2);
 
     }
 
