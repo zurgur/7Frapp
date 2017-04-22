@@ -51,6 +51,8 @@ public class Pay implements Initializable{
     private JFXButton signOut;
     @FXML
     private JFXListView thuertadkaupa;
+    @FXML
+    private Label userName;
 
     tengingVidGagnagrunnFyrirPay t = new tengingVidGagnagrunnFyrirPay();
 
@@ -164,6 +166,9 @@ public class Pay implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if(Login.username != null && !Login.username.isEmpty()){
+            userName.setText(Login.username);
+        }
         //í vinnslu
         ArrayList<Flight> out = Search.found1;
         ArrayList<Flight> home = Search.found2;

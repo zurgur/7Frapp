@@ -4,23 +4,23 @@ import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 /**
  * Created by Alexander on 7.4.2017.
  */
-public class Search {
+public class Search implements Initializable{
     //búa til FXML hluti svo við getum notað þá ur fxml skjalinu
     @FXML
     Button leita;
@@ -42,6 +42,8 @@ public class Search {
     Button back;
     @FXML
     JFXButton signOut;
+    @FXML
+    Label userLable;
     //tengjumst gagnagrunninum sem er sqlite
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
     //gerum Array lista fyrir gögninn í sql-inu
@@ -185,5 +187,12 @@ public class Search {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        if(Login.username != null && !Login.username.isEmpty()){
+            userLable.setText(Login.username);
+        }
     }
 }

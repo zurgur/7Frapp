@@ -27,7 +27,6 @@ import java.io.IOException;
  */
 public class Login implements Initializable{
     //búa til FXML hluti svo við getum notað þá ur skjalinu
-
     @FXML
     private JFXTextField user;
 
@@ -53,6 +52,9 @@ public class Login implements Initializable{
     private Label isConnected;
 
     Connection connection;
+    //bæti við hér
+    public static String username;
+    //búinn að bæta við
 
     //If there is no connection to the database the system will shut down
     public Login ()
@@ -129,6 +131,9 @@ public class Login implements Initializable{
         try {
             if(isLogin(user.getText(), password.getText()))
             {
+                //Bætti við hér
+                username = user.getText();
+                //Búinn að bæta við
                 Stage stage;
                 FXMLLoader loader = new FXMLLoader();
                 Pane root = loader.load(getClass().getResource("HomePage.fxml").openStream());

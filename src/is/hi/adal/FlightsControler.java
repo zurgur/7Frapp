@@ -39,6 +39,8 @@ public class FlightsControler implements Initializable{
     ToggleButton sortPrice;
     @FXML
     ToggleButton sortSeats;
+    @FXML
+    Label userName;
     //inizalize array lista
     private ArrayList<Flight> out = new ArrayList<>();
 
@@ -49,6 +51,9 @@ public class FlightsControler implements Initializable{
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        if(Login.username != null && !Login.username.isEmpty()){
+            userName.setText(Login.username);
+        }
         // læt listana vilja stæka :)
         homeList.setExpanded(Boolean.TRUE);
         outList.setExpanded(Boolean.TRUE);

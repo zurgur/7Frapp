@@ -25,7 +25,7 @@
       <JFXButton fx:id="leita" layoutX="180.0" layoutY="321.0" onAction="#leitaAction" prefHeight="45.0" prefWidth="119.0" style="-fx-background-color: #48d611;" text="Search" textFill="WHITE" />
       <Pane layoutY="-2.0" prefHeight="35.0" prefWidth="601.0" style="-fx-background-color: #48d611;">
          <children>
-            <Label fx:id="userLabel" layoutX="452.0" layoutY="11.0" prefHeight="17.0" prefWidth="89.0" text="Welcome User" textFill="WHITE" />
+            <Label fx:id="userLable" layoutX="452.0" layoutY="11.0" prefHeight="17.0" prefWidth="89.0" text="Welcome User" textFill="WHITE" />
             <JFXButton fx:id="signOut" layoutX="535.0" layoutY="2.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="35.0" prefWidth="65.0" text="Sign Out" textFill="WHITE" />
          </children></Pane>
      </children>

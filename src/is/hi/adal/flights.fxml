@@ -21,7 +21,7 @@
             <Pane layoutY="7.0" prefHeight="34.0" prefWidth="696.0" style="-fx-background-color: #48d611;">
                <children>
                   <JFXButton fx:id="signOut" layoutX="625.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="34.0" prefWidth="64.0" text="Sign out" textFill="WHITE" />
-                  <Label fx:id="userLabel" layoutX="548.0" layoutY="9.0" text="Welcome User" textFill="WHITE" />
+                  <Label fx:id="userName" layoutX="548.0" layoutY="9.0" text="Welcome User" textFill="WHITE" />
                </children></Pane>
             <JFXToggleButton fx:id="sortPrice" layoutX="549.0" layoutY="76.0" onAction="#sortPriceAction" text="Sort by price" />
             <JFXToggleButton fx:id="sortSeats" layoutX="549.0" layoutY="132.0" onAction="#sortSeatsAction" text="Sort by seats" />
