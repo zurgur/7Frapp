@@ -27,7 +27,7 @@ public class tengingVidGagnagrunnFyrirPay {
     // adds new user to database
     public void insertNewBooking(String username, String firstname, String lastname, String gender, String ssn, String nationality, String from, String to, String date, String seat, String flightID) {
 
-        String sql = "INSERT INTO User(username, firstname, lastname, gender, ssn, nationality, from, to, date, seat, fligthID) VALUES(?,?,?,?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO User(username, firstname, lastname, gender, ssn, nationality, from, to, date) VALUES(?,?,?,?,?,?,?,?,?)";
 
         try (Connection conn = this.Connect();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
