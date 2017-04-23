@@ -110,12 +110,12 @@ public class Pay implements Initializable{
         }
         System.out.println("count: " + count);
 
-        if(count == 6)
+        if(count == 8)
         {
             caseR = 1;
             System.out.println("tilfelli 1");
         }
-        else if(count < 6)
+        else if(count < 8)
         {
             caseR = 0;
             System.out.println("tilfelli 0");
