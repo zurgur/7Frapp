@@ -8,6 +8,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="hug" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="is.hi.adal.Search">
    <children>
@@ -28,5 +29,6 @@
             <Label fx:id="userLable" layoutX="452.0" layoutY="11.0" prefHeight="17.0" prefWidth="89.0" text="Welcome User" textFill="WHITE" />
             <JFXButton fx:id="signOut" layoutX="535.0" layoutY="2.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="35.0" prefWidth="65.0" text="Sign Out" textFill="WHITE" />
          </children></Pane>
+      <Text fx:id="error" fill="RED" layoutX="211.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" />
      </children>
 </AnchorPane>

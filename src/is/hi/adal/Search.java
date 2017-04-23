@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -44,6 +45,8 @@ public class Search implements Initializable{
     JFXButton signOut;
     @FXML
     Label userLable;
+    @FXML
+    Text error;
     //tengjumst gagnagrunninum sem er sqlite
     tengingVidGagnagrunn t = new tengingVidGagnagrunn();
     //gerum Array lista fyrir gögninn í sql-inu
@@ -63,19 +66,24 @@ public class Search implements Initializable{
 
     //fall þegar ýtt er á search
     public void leitaAction(ActionEvent actionEvent) throws IOException {
-        //ef báðir tímar eru valdir þá vil notandi fara farm og til bakka annars bara eina leið
-        if(timi1Valin && timi2Valin){
-            backAndForth();
-        } else if(timi1Valin){
-            oneWay();
+        if(departur.getText().trim().isEmpty() || departur.getText() == null ||
+                arrival.getText().trim().isEmpty() || arrival.getText() == null) {
+            error.setText("Pleas fill in the information above");
         }else {
-            //kóði fyrir puopup sem byður notanda um að velja dag.
-            Stage stage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("errorNoDate.fxml"));
-            stage.setScene(new Scene(root));
-            stage.initModality(Modality.APPLICATION_MODAL);
-            stage.initOwner(leita.getScene().getWindow());
-            stage.showAndWait();
+            //ef báðir tímar eru valdir þá vil notandi fara farm og til bakka annars bara eina leið
+            if (timi1Valin && timi2Valin) {
+                backAndForth();
+            } else if (timi1Valin) {
+                oneWay();
+            } else {
+                //kóði fyrir puopup sem byður notanda um að velja dag.
+                Stage stage = new Stage();
+                Parent root = FXMLLoader.load(getClass().getResource("errorNoDate.fxml"));
+                stage.setScene(new Scene(root));
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.initOwner(leita.getScene().getWindow());
+                stage.showAndWait();
+            }
         }
     }
 
