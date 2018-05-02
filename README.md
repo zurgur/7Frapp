@@ -15,3 +15,11 @@ Alexander Freyr Sveinsson,
 Brynja Pálína Sigurgeirsdóttir,
 
 Sunna Dröfn Sigfúsdóttir
+
+![altText](7Frapp/7Frapp1.PNG)
+
+![altText](7Frapp/7Frapp2.PNG)
+
+![altText](7Frapp/7Frapp3.PNG)
+
+![altText](7Frapp/7Frapp4.PNG)
